@@ -45,6 +45,6 @@ module.exports = {
         icon: config.logo,
       },
     },
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 };

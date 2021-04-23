@@ -43,6 +43,7 @@ export const Skills = () => {
               name="length-toggle"
               onClick={() => setAboutLength(long)}
             />
+            {'  '}
             <CheckBoxLabel htmlFor="checkbox2">lot</CheckBoxLabel> about me.
           </h1>
           <p>{aboutLength}</p>
