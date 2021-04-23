@@ -6,7 +6,10 @@ import { Wrapper, Details, Thumbnail } from './styles';
 
 export const Contact = () => (
   <Wrapper as={Container} id="contact">
-    <Details>{/* <ContactForm /> */}</Details>
+    <Details>
+      <h1>anus poopoo</h1>
+      {/* <ContactForm /> */}
+    </Details>
     <Thumbnail>
       <img
         src={contact}
