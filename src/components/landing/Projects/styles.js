@@ -1,6 +1,14 @@
 import styled from 'styled-components';
+import detailsIllustration from '../../../assets/illustrations/details.svg';
 
 export const Wrapper = styled.div`
+  background-image: url(${detailsIllustration});
+  background-size: 40vh;
+  background-position: left top;
+  background-repeat: no-repeat;
+`;
+
+export const ProjectWrapper = styled.div`
   padding: 2rem 0;
 `;
 
@@ -50,12 +58,10 @@ export const Content = styled.div`
 export const Stats = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   div {
     display: flex;
-    &:first-child {
-      margin-right: 0.5rem;
-    }
 
     img {
       margin: 0;
@@ -66,7 +72,7 @@ export const Stats = styled.div`
     }
 
     span {
-      color: ${({ theme }) => (theme === 'light' ? 'black' : '#fff')};
+      color: ${({ theme }) => (theme === 'light' ? 'black' : 'black')};
     }
   }
 `;
@@ -77,4 +83,5 @@ export const Languages = styled.div`
   border: 1px solid gray;
   padding: 0.125rem;
   background-color: #ebebeb;
+  margin: 0 0.5rem;
 `;

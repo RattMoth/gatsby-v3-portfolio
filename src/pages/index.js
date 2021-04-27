@@ -1,13 +1,15 @@
 import React from 'react';
 import { Layout, SEO } from '../components/common';
-import { Intro, Skills, Contact } from '../components/landing';
+import { Intro, Skills, Contact, Projects } from '../components/landing';
 
-export default () => (
+const Index = () => (
   <Layout>
     <SEO />
     <Intro />
     <Skills />
-    {/* <Projects /> */}
+    <Projects />
     <Contact />
   </Layout>
 );
+
+export default Index;
