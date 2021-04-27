@@ -4,12 +4,16 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Matt Roth's Portfolio Page
 </h1>
 
-## 🚀 Quick start
+# What's in this readme?
 
-1.  **Create a Gatsby site.**
+Each time I start a new project I usually consult a handful of docs/tutorials to recreate my preferred VScode environment (linting rules, eslint/prettier conflict resolution, etc.). I plan to use this readme to bring all of that information together in one place. This will simplify the setup process, and since this is my first Gatsby project it will have the added benefit of serving as my notes for this technology as well. Let's get going!
+
+## Setting up my local environment
+
+1.  **Create a new Gatsby site using the minimal starter.**
 
     Use the Gatsby CLI to create a new site, specifying the minimal starter.
 
@@ -18,37 +22,108 @@
     npm init gatsby
     ```
 
-2.  **Start developing.**
+    The relevant configs I used in this project are:
 
-    Navigate into your new site’s directory and start it up.
+    - CMS? **No**
+    - Styling? **Styled-components**
+    - Plugins:
+      - Google Analytics
+      - Responsive images
+      - React Helment
+      - Offline functionality
+      - Manifest file
+      - Markdown and MDX support
+
+2.  **Installing packages**
 
     ```shell
-    cd my-gatsby-site/
-    npm run develop
+    npm i eslint -D
+    npm i prettier -D
+    npx eslint --init
     ```
 
-3.  **Open the code and start customizing!**
+    ESLint init options are as follows:
 
-    Your site is now running at http://localhost:8000!
+    - How would you like to use ESLint?
+      - To check syntax, find problems, and enforce code style
+    - What type of modules does your project use?
+      - JavaScript modules (import/export)
+    - Which framework does your project use?
+      - React
+    - Does your project use TypeScript?
+      - No
+    - Where does your code run?
+      - Browser
+    - How would you like to define a style for your project?
+      - Use a popular style guide
+      - Which style guide do you want to follow?
+        - Airbnb: https://github.com/airbnb/javascript
+    - What format do you want your config file to be in?
+      - JSON
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+3.  **Adding Prettier to ESLint**
 
-4.  **Learn more**
+    ```shell
+    npm i eslint-plugin-prettier -D
+    ```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    This will run Prettier as an ESLint rule and reports differences as individual ESLint issues. To use this add the following code to `.eslintrc.json`. (Code contains extra rules and preferences).
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    ```json
+    "plugins": [
+      "react",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        // Report any differences as an error
+        "error",
+        // Additional rules
+        {
+          "endOfLine": "lf",
+          "semi": true,
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5"
+        }
+      ]
+    }
+    ```
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+4.  **Prevent conflict between Prettier and ESLint**
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    A Prettier config package exists for ESLint
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    ```shell
+    npm i eslint-config-prettier -D
+    ```
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    To use it, add `"prettier"` to the `"extends"` array in `eslintrc.json`:
 
-## 🚀 Quick start (Gatsby Cloud)
+    ```json
+    "extends": [
+      "plugin:react/recommended",
+      "airbnb",
+      "prettier",
+      "prettier/react"
+    ],
+    ```
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+    _Make sure the Prettier rules are last in the array!_
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+5.  **VSCode config**
+
+    Keep settings specific to project by using VSCode's "workspaces" settings. This prevents headache if a job requires a different local environment.
+
+    ```json
+    "editor.formatOnSave": true,
+    "[javascript]": {
+      "editor.formatOnSave": false
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "eslint.alwaysShowStatus": true,
+    ```
+
+    There is also a VSCode extension that can use Prettier's formatting power on other languages. Set Prettier as the **default formatter** (previously done with `"prettier.disableLanguages": [ "js" ]`) and disable the extension for `.js` files, otherwise they will fight and revert corrections and create a generally bad time. A lot of this ESLint config advice comes from [Nicky Meuleman's excellent guide!](https://nickymeuleman.netlify.app/blog/automagically-lint)
