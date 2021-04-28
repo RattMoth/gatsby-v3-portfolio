@@ -79,7 +79,7 @@ export const Stats = styled.div`
 
 export const Languages = styled.div`
   opacity: 0.5;
-  font-size: 14px;
+  font-size: 1.16;
   border: 1px solid gray;
   padding: 0.125rem;
   background-color: #ebebeb;

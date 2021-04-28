@@ -15,6 +15,7 @@ export const SkillsWrapper = styled.div`
   justify-content: space-between;
 
   @media (max-width: 960px) {
+    padding-top: 0;
     flex-direction: column;
   }
 `;
@@ -30,7 +31,7 @@ export const Details = styled.div`
 
   h1 {
     margin-bottom: 2rem;
-    font-size: 26pt;
+    font-size: 2rem;
     color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#19323C')};
 
     @media (max-width: 960px) {
