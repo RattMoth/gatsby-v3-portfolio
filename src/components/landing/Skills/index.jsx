@@ -5,19 +5,15 @@ import { Container, Button, CheckBox, CheckBoxLabel } from '../../common';
 import { Wrapper, SkillsWrapper, Details } from './styles';
 
 const short =
-  "Hello! As you can see from the header above, my name is Matt and I'm a self taught developer specializing in React.js. ";
+  "Hey thanks for checking out my site! I'm a self-taught developer with about 1.5 years of professional experience. I specialize in React.js, and I am familiar with Python backends such as Flask and Django. I'm also a Linux hobbyist and have been using Debian-based distros as my main OS for the last 10 years (mainly Ubuntu and Linux Mint, who has time for Arch?). My interests aren't limited only to tech, I have hobbies in just about every category and I'm always on the lookout for more! If you want to learn more about me feel free to browse my projects below, reach out using any of my contact links, or just flip that toggle switch above!";
 
-const long = `Hello! As you can see from the header above, my name is Matt and I'm a self taught developer specializing in React.js. I graduated from UC Santa Barbara in 2018 with a B.A. in Biological Anthropology Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, exercitationem tenetur odio eos id excepturi libero minus, quas corrupti saepe qui totam error assumenda consequuntur! Explicabo exercitationem unde esse minima iusto nam repudiandae eveniet tempora eaque, laboriosam porro a harum saepe in! Explicabo, enim magnam excepturi doloremque quis eveniet dolorum alias? Veniam porro doloribus dolorem, nesciunt qui minus dolorum veritatis? Fugiat facere veritatis molestias similique, inventore sint totam quae praesentium doloribus, natus eum. Minus atque ipsam, iste unde minima ex velit alias laboriosam sint architecto. Quod, quo. Ut soluta, ipsum, eos necessitatibus esse architecto tenetur temporibus ducimus optio libero eligendi?
+const long = `Hello! Welcome to the detailed intro. You probably have some questions. I'll try to answer everything in a few short paragraphs!\n\nMy self-taught background is thanks to my interest in tech.... 
 
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores magni dolore accusantium autem pariatur, consequatur expedita facilis mollitia illo, asperiores minima ea voluptates suscipit ex!`;
+I've been interested in programming since high school; I saw the original Tron movie and bought a C++ book to find out what computers are really doing when they run a program. Despite my interest, professional programming always seemed out of my reach. A career in this field seemed like it was reserved for those who "loved math." Thankfully I discovered that`;
 
 export const Skills = () => {
   const { theme } = useContext(ThemeContext);
   const [aboutLength, setAboutLength] = useState(short);
-
-  // const toggleLength = () => {
-
-  // }
 
   return (
     <Wrapper id="about">

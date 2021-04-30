@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Fade from 'react-reveal/Fade';
+import TextLoop from 'react-text-loop';
 import { Header } from '../../theme';
 import { Container } from '../../common';
 import dev from '../../../assets/illustrations/dev.svg';
@@ -18,7 +19,22 @@ export const Intro = () => {
             <h1>Hi There!</h1>
           </Fade>
           <Fade bottom duration={1000} delay={1000}>
-            <h4>My name is Matt Roth. I&apos;m a Full Stack Web Developer.</h4>
+            <h4>
+              My name is Matt Roth. I&apos;m a Full Stack Web Developer and{' '}
+              <TextLoop
+                adjustingSpeed="1"
+                delay="1500"
+                interval={[3000, 5000, 5000, 5000, 5000, 5000]}
+              >
+                <p>Linux enthusiast</p>
+                <p>backpacker</p>
+                <p>coffee nerd</p>
+                <p>bad chess player</p>
+                <p>fountain pen collector</p>
+                <p>whiskey nerd</p>
+              </TextLoop>
+              .
+            </h4>
           </Fade>
         </Details>
         <Thumbnail>

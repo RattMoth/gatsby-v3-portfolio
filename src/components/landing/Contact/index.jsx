@@ -7,14 +7,14 @@ import { Wrapper, Details, Thumbnail } from './styles';
 export const Contact = () => (
   <Wrapper as={Container} id="contact">
     <Details>
-      <h1>anus poopoo</h1>
+      <h2> Lorem Ipsum</h2>
       {/* <ContactForm /> */}
     </Details>
-    <Thumbnail>
+    {/* <Thumbnail>
       <img
         src={contact}
         alt="My name is Matt Roth and I'm a fullstack developer"
       />
-    </Thumbnail>
+    </Thumbnail> */}
   </Wrapper>
 );
