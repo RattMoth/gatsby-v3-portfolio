@@ -6,24 +6,28 @@ import PropTypes from 'prop-types';
 export const FoldableContainer = (props) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const { buttonText, children } = props;
-  console.log('children: ', children);
-  console.log('isOpen', isOpen);
+  const { headerText, buttonText, children } = props;
   return (
-    <div>
-      <Button
-        className="btn"
-        onClick={() => setIsOpen((prevState) => !prevState)}
-      >
-        {buttonText}
-      </Button>
+    <>
+      <div className="d-flex align-items-start justify-content-between">
+        <h2>{headerText}</h2>
+        <Button
+          className="btn"
+          onClick={() => setIsOpen((prevState) => !prevState)}
+        >
+          {buttonText}
+        </Button>
+      </div>
 
-      <Collapse in={isOpen}>{children}</Collapse>
-    </div>
+      <Collapse in={isOpen}>
+        <div>{children}</div>
+      </Collapse>
+    </>
   );
 };
 
 FoldableContainer.propTypes = {
+  headerText: PropTypes.string,
   buttonText: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -33,5 +37,6 @@ FoldableContainer.propTypes = {
 };
 
 FoldableContainer.defaultProps = {
-  buttonText: 'Toggle',
+  headerText: 'Section Header',
+  buttonText: 'Toggle Section',
 };

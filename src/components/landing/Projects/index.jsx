@@ -41,10 +41,9 @@ export const Projects = () => {
   const edges = [1, 1, 1, 1, 1, 1];
 
   return (
-    <FoldableContainer>
-      <Wrapper id="projects">
-        <ProjectWrapper as={Container}>
-          <h2>Projects</h2>
+    <Wrapper id="projects">
+      <ProjectWrapper as={Container}>
+        <FoldableContainer headerText="Projects">
           <Grid>
             {/* <StaticImage
           width={410}
@@ -91,9 +90,9 @@ export const Projects = () => {
               </Item>
             ))}
           </Grid>
-        </ProjectWrapper>
-      </Wrapper>
-    </FoldableContainer>
+        </FoldableContainer>
+      </ProjectWrapper>
+    </Wrapper>
   );
 };
 
