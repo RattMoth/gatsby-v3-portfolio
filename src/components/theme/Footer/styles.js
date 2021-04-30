@@ -11,6 +11,11 @@ export const Wrapper = styled.div`
   @media (max-width: 1960px) {
     padding: 14rem 0 4rem;
   }
+
+  @media (max-width: 960px) {
+    padding-bottom: 0px;
+    padding-top: 8rem;
+  }
 `;
 
 export const Flex = styled.div`
@@ -48,9 +53,10 @@ export const Details = styled.div`
   a,
   span {
     color: #19323c;
+    margin-bottom: 0;
   }
 
   @media (max-width: 680px) {
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
   }
 `;

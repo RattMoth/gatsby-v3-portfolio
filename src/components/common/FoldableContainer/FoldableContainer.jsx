@@ -6,16 +6,39 @@ import PropTypes from 'prop-types';
 export const FoldableContainer = (props) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const { headerText, buttonText, children } = props;
+  const {
+    headerText,
+    buttonTextWhenOpen,
+    buttonTextWhenClosed,
+    children,
+  } = props;
+
+  // For resize events
+  React.useEffect(() => {
+    function handleWindowResize() {
+      if (window.innerWidth <= 680) {
+        setIsOpen(false);
+      }
+    }
+    window.addEventListener('resize', handleWindowResize);
+  });
+
+  // For initial page load. I know, there has to be a better way
+  React.useEffect(() => {
+    if (window.innerWidth <= 680) {
+      setIsOpen(false);
+    }
+  }, []);
+
   return (
     <>
       <div className="d-flex align-items-start justify-content-between">
-        <h2>{headerText}</h2>
+        <h1>{headerText}</h1>
         <Button
-          className="btn"
+          className="btn mb-4"
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
-          {buttonText}
+          {isOpen ? buttonTextWhenOpen : buttonTextWhenClosed}
         </Button>
       </div>
 
@@ -28,7 +51,8 @@ export const FoldableContainer = (props) => {
 
 FoldableContainer.propTypes = {
   headerText: PropTypes.string,
-  buttonText: PropTypes.string,
+  buttonTextWhenClosed: PropTypes.string,
+  buttonTextWhenOpen: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -38,5 +62,6 @@ FoldableContainer.propTypes = {
 
 FoldableContainer.defaultProps = {
   headerText: 'Section Header',
-  buttonText: 'Toggle Section',
+  buttonTextWhenClosed: 'Open Section',
+  buttonTextWhenOpen: 'Close Section',
 };

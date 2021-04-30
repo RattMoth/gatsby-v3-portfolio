@@ -43,7 +43,11 @@ export const Projects = () => {
   return (
     <Wrapper id="projects">
       <ProjectWrapper as={Container}>
-        <FoldableContainer headerText="Projects">
+        <FoldableContainer
+          buttonTextWhenOpen="Hide Projects"
+          buttonTextWhenClosed="Show Projects"
+          headerText="Projects"
+        >
           <Grid>
             {/* <StaticImage
           width={410}
