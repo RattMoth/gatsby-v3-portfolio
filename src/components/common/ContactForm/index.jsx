@@ -66,7 +66,7 @@ class ContactForm extends React.Component {
               name="email"
               value={email}
               id="input-email"
-              autoComplete
+              autoComplete="true"
               placeholder="Email address"
               onChange={this.handleChange}
             />

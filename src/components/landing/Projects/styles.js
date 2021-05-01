@@ -11,7 +11,16 @@ export const ProjectWrapper = styled.div`
   padding: 2rem 0;
 
   p {
-    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.12rem;
+    font-weight: normal;
+    line-height: 1.3;
+    color: ${({ theme }) => (theme === 'light' ? 'black' : 'white')};
+
+    @media (max-width: 960px) {
+      mix-blend-mode: ${({ theme }) =>
+        theme === 'light' ? 'unset' : 'difference'};
+    }
   }
 `;
 

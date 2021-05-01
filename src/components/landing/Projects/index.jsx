@@ -42,7 +42,7 @@ export const Projects = () => {
   const projectParagraphText = `Here's a list of some of my web dev projects. At the moment it's mostly made up of my early (e.g. unimpressive) projects that I have available on my personal GitHub. But as time goes by I'll add some more professional and/or impressive side projects. Thanks for taking a look!`;
   return (
     <Wrapper id="projects">
-      <ProjectWrapper as={Container}>
+      <ProjectWrapper as={Container} theme={theme}>
         <FoldableContainer
           buttonTextWhenOpen="Hide Projects"
           buttonTextWhenClosed="Show Projects"

@@ -42,6 +42,8 @@ export const Intro = () => {
         <Thumbnail>
           <img
             src={dev}
+            height="auto"
+            width="674"
             alt="Hey I'm Matt! This is an illustration of myself sitting on the floow with my ThinkPad, a cup of coffee, and a house plant."
           />
         </Thumbnail>
