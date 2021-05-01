@@ -15,10 +15,10 @@ export const Intro = () => {
       <Header />
       <IntroWrapper as={Container}>
         <Details theme={theme}>
-          <Fade bottom duration={1000} delay={500}>
+          <Fade bottom duration={1000}>
             <h1>Hi There!</h1>
           </Fade>
-          <Fade bottom duration={1000} delay={1000}>
+          <Fade bottom duration={1000}>
             <h4>
               My name is Matt Roth. I&apos;m a Full Stack Web Developer and{' '}
               <TextLoop
