@@ -12,36 +12,33 @@ export default () => {
 
   const toggleTheme = () => {
     if (theme === 'light') {
-      if (!prefersDarkMode) {
-        window.localStorage.setItem('theme', 'dark');
-      }
+      // if (!prefersDarkMode) {
+      // window.localStorage.setItem('theme', 'dark');
+      // }
       setTheme('dark');
     } else {
-      if (!prefersDarkMode) {
-        window.localStorage.setItem('theme', 'light');
-      }
+      // if (!prefersDarkMode) {
+      // window.localStorage.setItem('theme', 'light');
+      // }
       setTheme('light');
     }
   };
 
   useEffect(() => {
-    console.log('kark check');
     if (prefersDarkMode) {
-      window.localStorage.removeItem('theme');
+      // window.localStorage.removeItem('theme');
       setTheme('dark');
-    }
-  }, [prefersDarkMode]);
-
-  useEffect(() => {
-    console.log('toh');
-    const localTheme = window.localStorage.getItem('theme');
-    if (localTheme) {
-      window.localStorage.setItem('theme', localTheme);
-      setTheme(localTheme);
     } else {
+      // const localTheme = window.localStorage.getItem('theme');
+      // if (localTheme) {
+      //   window.localStorage.setItem('theme', localTheme);
+      //   setTheme(localTheme);
+      // } else {
+      //   setTheme('light');
+      // }
       setTheme('light');
     }
-  }, []);
+  }, [prefersDarkMode]);
 
   return [theme, toggleTheme];
 };
