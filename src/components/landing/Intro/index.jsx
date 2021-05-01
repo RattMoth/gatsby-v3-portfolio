@@ -22,7 +22,6 @@ export const Intro = () => {
             <h4>
               My name is Matt Roth. I&apos;m a Full Stack Web Developer and{' '}
               <TextLoop
-                adjustingSpeed="5"
                 delay="1500"
                 interval={[3000, 5500, 5500, 5500, 5500, 5500]}
                 springConfig={{ stiffness: 200, damping: 30 }}
