@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Button } from 'react-bootstrap';
 import { ThemeContext } from '../../../providers/ThemeProvider';
-import { Container, Button, CheckBox, CheckBoxLabel } from '../../common';
+import { Container, CheckBox, CheckBoxLabel } from '../../common';
 import { Wrapper, SkillsWrapper, Details } from './styles';
 
 const short =

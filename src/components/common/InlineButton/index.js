@@ -7,6 +7,7 @@ export const CheckBoxLabel = styled.label`
   border: 2px solid #96979c;
   border-radius: 3px;
   cursor: pointer;
+  font-size: 1.7rem;
 `;
 export const CheckBox = styled.input`
   user-select: none;
@@ -16,5 +17,15 @@ export const CheckBox = styled.input`
   &:checked + ${CheckBoxLabel} {
     background: #aadcec;
     color: #fff;
+    font-size: 1.9rem;
+  }
+  &:hover :not(:checked) + ${CheckBoxLabel}{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: transform 0.25s ease-in-out;
+    -webkit-transition: transform 0.25s ease-in-out;
+    -moz-transition: transform 0.25s ease-in-out;
+    -ms-transition: transform 0.25s ease-in-out;
   }
 `;

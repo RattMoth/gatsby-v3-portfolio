@@ -5,10 +5,10 @@ export const Wrapper = styled.div`
     color: #000;
     text-decoration: none;
 
-    color: ${({ theme }) => (theme === 'light' ? '#000' : '#000')};
-    @media (max-width: 960px) {
-      color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
-    }
+    // color: ${({ theme }) => (theme === 'light' ? '#000' : '#000')};
+    // @media (max-width: 960px) {
+    //   color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+    // }
   }
 
   ${({ desktop }) =>
@@ -33,7 +33,8 @@ export const Wrapper = styled.div`
 			padding: 3rem;
 			display: flex;
 			flex-direction: column;
-
+			background-color: rgba(170,220,236, 0.8);
+			border-radius: 9px;
 			a {
 					margin-bottom: 1rem;
 

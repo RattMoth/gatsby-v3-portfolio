@@ -10,6 +10,10 @@ export const Wrapper = styled.div`
 
 export const ProjectWrapper = styled.div`
   padding: 2rem 0;
+
+  p {
+    font-size: 1.25rem;
+  }
 `;
 
 export const Grid = styled.div`

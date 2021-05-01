@@ -11,6 +11,7 @@ export const FoldableContainer = (props) => {
     buttonTextWhenOpen,
     buttonTextWhenClosed,
     children,
+    paragraphText,
   } = props;
 
   // For resize events
@@ -41,6 +42,9 @@ export const FoldableContainer = (props) => {
           {isOpen ? buttonTextWhenOpen : buttonTextWhenClosed}
         </Button>
       </div>
+      <div>
+        <p>{paragraphText}</p>
+      </div>
 
       <Collapse in={isOpen}>
         <div>{children}</div>
@@ -51,6 +55,7 @@ export const FoldableContainer = (props) => {
 
 FoldableContainer.propTypes = {
   headerText: PropTypes.string,
+  paragraphText: PropTypes.string,
   buttonTextWhenClosed: PropTypes.string,
   buttonTextWhenOpen: PropTypes.string,
   children: PropTypes.oneOfType([
@@ -64,4 +69,6 @@ FoldableContainer.defaultProps = {
   headerText: 'Section Header',
   buttonTextWhenClosed: 'Open Section',
   buttonTextWhenOpen: 'Close Section',
+  paragraphText:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laudantium ipsam magnam facilis numquam, nemo assumenda excepturi consequuntur delectus architecto impedit minima, fugit quasi iste?',
 };

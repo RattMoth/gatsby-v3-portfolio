@@ -14,7 +14,11 @@ export const Contact = () => {
     <Wrapper as={Container} id="contact">
       <Details theme={theme}>
         <h1>Let&apos;s get in touch!</h1>
-        <p>test</p>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+          exercitationem totam quisquam amet quae! Ad dicta fugit earum
+          molestiae eum reiciendis nulla obcaecati, nam fuga?
+        </p>
         <div id="form">
           <form className="cf">
             <div className="half left cf">

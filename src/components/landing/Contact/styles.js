@@ -36,7 +36,7 @@ export const Details = styled.div`
 
   p {
     margin-bottom: 2.5rem;
-    font-size: 1.6rem;
+    font-size: 1.25rem;
     font-weight: normal;
     line-height: 1.3;
     color: ${({ theme }) => (theme === 'light' ? 'black' : 'white')};
@@ -123,7 +123,7 @@ export const Details = styled.div`
     }
 
     form textarea {
-      height: 126px;
+      height: 12.5rem;
     }
 
     .half {
