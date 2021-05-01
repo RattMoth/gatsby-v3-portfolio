@@ -16,11 +16,11 @@ export const Contact = () => {
     <Wrapper id="contact">
       <ContactWrapper as={Container}>
         <Details theme={theme}>
-          <h1>Let&apos;s get in touch!</h1>
+          <h1>Let&apos;s get in contact!</h1>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-            exercitationem totam quisquam amet quae! Ad dicta fugit earum
-            molestiae eum reiciendis nulla obcaecati, nam fuga?
+            Feel free to reach out using any of the links below! And
+            there&apos;s a form too for those who prefer a more direct approach
+            (you gotta promise you&apos;re not a bot though).
           </p>
           <div id="form">
             <ContactForm />

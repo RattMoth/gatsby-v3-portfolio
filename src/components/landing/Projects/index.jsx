@@ -39,7 +39,7 @@ export const Projects = () => {
   //   }
   // `);
   const edges = [1, 1, 1, 1, 1, 1];
-
+  const projectParagraphText = `Here's a list of some of my web dev projects. At the moment it's mostly made up of my early (e.g. unimpressive) projects that I have available on my personal GitHub. But as time goes by I'll add some more professional and/or impressive side projects. Thanks for taking a look!`;
   return (
     <Wrapper id="projects">
       <ProjectWrapper as={Container}>
@@ -47,6 +47,7 @@ export const Projects = () => {
           buttonTextWhenOpen="Hide Projects"
           buttonTextWhenClosed="Show Projects"
           headerText="Projects"
+          paragraphText={projectParagraphText}
         >
           <Grid>
             {/* <StaticImage
@@ -66,9 +67,9 @@ export const Projects = () => {
                     alt="kittiey"
                   />
                   <Content>
-                    <h4>kat</h4>
+                    <h4>Cat</h4>
                     {/* <div dangerouslySetInnerHTML={{ __html: node.html }} /> */}
-                    <div>this is a katty</div>
+                    <div>This is a placeholder cat. How nice!</div>
                   </Content>
                   <TitleWrap>
                     {/* <Stats theme={theme}>
