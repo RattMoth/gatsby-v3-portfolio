@@ -25,19 +25,23 @@ export default () => {
   };
 
   useEffect(() => {
+    console.log('kark check');
     if (prefersDarkMode) {
       window.localStorage.removeItem('theme');
       setTheme('dark');
-    } else {
-      const localTheme = window.localStorage.getItem('theme');
-      if (localTheme) {
-        window.localStorage.setItem('theme', localTheme);
-        setTheme(localTheme);
-      } else {
-        setTheme('light');
-      }
     }
   }, [prefersDarkMode]);
+
+  useEffect(() => {
+    console.log('toh');
+    const localTheme = window.localStorage.getItem('theme');
+    if (localTheme) {
+      window.localStorage.setItem('theme', localTheme);
+      setTheme(localTheme);
+    } else {
+      setTheme('light');
+    }
+  }, []);
 
   return [theme, toggleTheme];
 };
