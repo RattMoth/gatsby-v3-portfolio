@@ -25,15 +25,17 @@ export default () => {
   };
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem('theme');
-    if (localTheme) {
-      window.localStorage.setItem('theme', localTheme);
-      setTheme(localTheme);
-    } else if (prefersDarkMode) {
+    if (prefersDarkMode) {
       window.localStorage.removeItem('theme');
       setTheme('dark');
     } else {
-      setTheme('light');
+      const localTheme = window.localStorage.getItem('theme');
+      if (localTheme) {
+        window.localStorage.setItem('theme', localTheme);
+        setTheme(localTheme);
+      } else {
+        setTheme('light');
+      }
     }
   }, [prefersDarkMode]);
 

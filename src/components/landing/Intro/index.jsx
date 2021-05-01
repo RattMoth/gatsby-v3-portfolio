@@ -22,6 +22,7 @@ export const Intro = () => {
             <h4>
               My name is Matt Roth. I&apos;m a Full Stack Web Developer and{' '}
               <TextLoop
+                adjustingSpeed="5"
                 delay="1500"
                 interval={[3000, 5500, 5500, 5500, 5500, 5500]}
                 springConfig={{ stiffness: 200, damping: 30 }}
@@ -43,7 +44,7 @@ export const Intro = () => {
             src={dev}
             height="auto"
             width="674"
-            alt="Hey I'm Matt! This is an illustration of myself sitting on the floow with my ThinkPad, a cup of coffee, and a house plant."
+            alt="Hey I'm Matt! This is an illustration of myself sitting on the floor with my ThinkPad, a cup of coffee, and a house plant."
           />
         </Thumbnail>
       </IntroWrapper>
