@@ -1,6 +1,14 @@
 import styled from 'styled-components';
+import contactIllustration from '../../../assets/illustrations/contact-overlay.svg';
 
 export const Wrapper = styled.div`
+  background-image: url(${contactIllustration});
+  background-size: 30vh;
+  background-position: right top;
+  background-repeat: no-repeat;
+`;
+
+export const ContactWrapper = styled.div`
   padding: 4rem 0;
   display: flex;
   align-items: flex-start;
