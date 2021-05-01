@@ -6,6 +6,8 @@ import twitter from '../../../assets/icons/twitter.png';
 import { Container } from '../../common/Container';
 import { Wrapper, Details, ContactWrapper } from './styles';
 import { ThemeContext } from '../../../providers/ThemeProvider';
+// eslint-disable-next-line
+import ContactForm from '../../common/ContactForm';
 
 export const Contact = () => {
   const { theme } = useContext(ThemeContext);
@@ -21,33 +23,7 @@ export const Contact = () => {
             molestiae eum reiciendis nulla obcaecati, nam fuga?
           </p>
           <div id="form">
-            <form
-              className="cf"
-              name="contact"
-              method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-            >
-              <div className="half left cf">
-                <input type="hidden" name="form-name" value="contact" />
-                <input type="text" id="input-name" placeholder="Name" />
-                <input
-                  type="email"
-                  id="input-email"
-                  placeholder="Email address"
-                />
-                <input type="text" id="input-subject" placeholder="Subject" />
-              </div>
-              <div className="half right cf">
-                <textarea
-                  name="message"
-                  type="text"
-                  id="input-message"
-                  placeholder="Message"
-                />
-              </div>
-              <input type="submit" value="Submit" id="input-submit" />
-            </form>
+            <ContactForm />
           </div>
           <div id="contact-links-container">
             <a
