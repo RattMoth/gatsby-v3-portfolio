@@ -12,7 +12,7 @@ export const ProjectWrapper = styled.div`
 
   p {
     margin-bottom: 2.5rem;
-    font-size: 1.12rem;
+    font-size: 1.25rem;
     font-weight: normal;
     line-height: 1.3;
     color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};

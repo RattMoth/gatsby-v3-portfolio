@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Collapse } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -14,18 +14,33 @@ export const FoldableContainer = (props) => {
     paragraphText,
   } = props;
 
+  // This was a cool solution, but ultimately provides a somewhat useless feature.
+  // Hide projects on window resize is not as useful as I thought it could be.
   // For resize events
-  React.useEffect(() => {
-    function handleWindowResize() {
-      if (window.innerWidth <= 680) {
-        setIsOpen(false);
-      }
-    }
-    window.addEventListener('resize', handleWindowResize);
-  });
+  // useEffect(() => {
+  //   function handleWindowResize() {
+  //     const difference = Math.abs(window.innerWidth - windowSize);
+  //     console.log('difference', difference);
+  //     console.log(
+  //       'nonno numb: ',
+  //       Math.abs(window.innerWidth - window.innerHeight)
+  //     );
+  //     if (
+  //       difference < 20 ||
+  //       difference !== 0 ||
+  //       difference === Math.abs(window.innerWidth - window.innerHeight)
+  //     ) {
+  //       console.log('returned');
+  //       setWindowSize(window.innerWidth);
+  //       return;
+  //     }
+  //     setIsOpen(false);
+  //   }
+  //   window.addEventListener('resize', handleWindowResize);
+  // });
 
   // For initial page load. I know, there has to be a better way
-  React.useEffect(() => {
+  useEffect(() => {
     if (window.innerWidth <= 680) {
       setIsOpen(false);
     }
