@@ -604,9 +604,9 @@ export const Global = createGlobalStyle`
       padding: 0;
       font-family: 'Roboto', Helvetica, sans-serif;
       color: ${({ theme }) =>
-        theme === 'light' ? 'hsla(0, 0%, 0%, 0.8)' : '#fff'};
+        theme === 'dark' ? '#fff' : 'hsla(0, 0%, 0%, 0.8)'};
       background-color: ${({ theme }) =>
-        theme === 'light' ? '#fff' : '#19323C'};
+        theme === 'dark' ? '#19323C' : '#fff'};
       transition: .3s all;
       font-weight: normal;
       word-wrap: break-word;

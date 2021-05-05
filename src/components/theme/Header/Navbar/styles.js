@@ -8,11 +8,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Brand = styled.a`
-  color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+  color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};
 
   @media (max-width: 960px) {
     mix-blend-mode: ${({ theme }) =>
-      theme === 'light' ? 'unset' : 'difference'};
+      theme === 'dark' ? 'difference' : 'unset'};
   }
 `;
 

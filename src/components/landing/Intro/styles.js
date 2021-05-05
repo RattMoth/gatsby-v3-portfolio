@@ -36,7 +36,7 @@ export const Details = styled.div`
     margin-bottom: 2rem;
     font-size: 3rem;
       mix-blend-mode: ${({ theme }) =>
-        theme === 'light' ? 'unset' : 'difference'};
+        theme === 'dark' ? 'difference' : 'unset'};
     }
 
     @media (max-width: 680px) {
@@ -49,10 +49,10 @@ export const Details = styled.div`
     margin-bottom: 2.5rem;
     font-size: 2.6rem;
     font-weight: normal;
-    color: ${({ theme }) => (theme === 'light' ? '#707070' : '#e6e6e6')};
+    color: ${({ theme }) => (theme === 'dark' ? '#e6e6e6' : '#707070')};
 
     mix-blend-mode: ${({ theme }) =>
-      theme === 'light' ? 'unset' : 'difference'};
+      theme === 'dark' ? 'difference' : 'unset'};
 
     @media (max-width: 680px) {
       font-size: 2rem;

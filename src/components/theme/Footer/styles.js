@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   background-repeat: no-repeat;
 
   @media (max-width: 1960px) {
-    padding: 14rem 0 4rem;
+    padding: 14rem 0 0;
   }
 
   @media (max-width: 960px) {
@@ -22,6 +22,7 @@ export const Flex = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  padding: 0 1rem;
 
   @media (max-width: 680px) {
     flex-direction: column;
@@ -54,9 +55,5 @@ export const Details = styled.div`
   span {
     color: #19323c;
     margin-bottom: 0;
-  }
-
-  @media (max-width: 680px) {
-    // margin-bottom: 2rem;
   }
 `;

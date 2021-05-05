@@ -4,7 +4,7 @@ import { Wrapper, Flex, Details } from './styles';
 
 export const Footer = () => (
   <Wrapper>
-    <Flex as={Container}>
+    <Flex>
       <Details>
         <h2>Matt Roth</h2>
         <span>

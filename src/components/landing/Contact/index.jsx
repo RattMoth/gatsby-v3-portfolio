@@ -19,8 +19,7 @@ export const Contact = () => {
           <h1>Let&apos;s get in contact!</h1>
           <p>
             Feel free to reach out using any of the links below! And
-            there&apos;s a form too for those who prefer a more direct approach
-            (you gotta promise you&apos;re not a bot though).
+            there&apos;s a form too for those who prefer a more direct approach.
           </p>
           <div id="form">
             <ContactForm />
@@ -63,11 +62,3 @@ export const Contact = () => {
     </Wrapper>
   );
 };
-
-// TO DO
-/**
- * Correct styles.js to properly use the scss styling in this context
- * Add recaptcha for submit button
- * Add mattroth.dev diagram??
- * import project details
- */

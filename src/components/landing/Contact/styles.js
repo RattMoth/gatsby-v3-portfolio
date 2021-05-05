@@ -34,11 +34,11 @@ export const Details = styled.div`
   h4 {
     margin-bottom: 2rem;
     font-size: 2rem;
-    color: ${({ theme }) => (theme === 'light' ? '#19323C' : '#fff')};
+    color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#19323C')};
 
     @media (max-width: 960px) {
       mix-blend-mode: ${({ theme }) =>
-        theme === 'light' ? 'unset' : 'difference'};
+        theme === 'dark' ? 'difference' : 'unset'};
     }
   }
 
@@ -47,11 +47,11 @@ export const Details = styled.div`
     font-size: 1.25rem;
     font-weight: normal;
     line-height: 1.3;
-    color: ${({ theme }) => (theme === 'light' ? 'black' : 'white')};
+    color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};
 
     @media (max-width: 960px) {
       mix-blend-mode: ${({ theme }) =>
-        theme === 'light' ? 'unset' : 'difference'};
+        theme === 'dark' ? 'difference' : 'unset'};
     }
   }
 

@@ -15,7 +15,7 @@ export const ProjectWrapper = styled.div`
     font-size: 1.12rem;
     font-weight: normal;
     line-height: 1.3;
-    color: ${({ theme }) => (theme === 'light' ? 'black' : 'white')};
+    color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};
 
     @media (max-width: 960px) {
       mix-blend-mode: ${({ theme }) =>
@@ -47,15 +47,15 @@ export const Item = styled.div`
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.11);
 
   h4 {
-    color: ${({ theme }) => (theme === 'light' ? '#19323C' : '#fff')};
+    color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#19323C')};
   }
 
   p {
-    color: ${({ theme }) => (theme === 'light' ? '#707070' : '#fff')};
+    color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#707070')};
   }
 
   a:visited {
-    color: ${({ theme }) => (theme === 'light' ? '#707070' : '#c7c7c7')};
+    color: ${({ theme }) => (theme === 'dark' ? '#c7c7c7' : '#707070')};
   }
   a:hover {
     text-decoration: underline;
@@ -80,11 +80,11 @@ export const Stats = styled.div`
     }
 
     svg path {
-      fill: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+      fill: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};
     }
 
     span {
-      color: ${({ theme }) => (theme === 'light' ? 'black' : 'black')};
+      color: 'black';
     }
   }
 `;
