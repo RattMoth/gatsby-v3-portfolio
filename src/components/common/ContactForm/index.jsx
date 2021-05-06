@@ -26,7 +26,9 @@ const ContactForm = () => {
         message,
       }),
     })
-      .then(() => navigate('/'))
+      .then(() =>
+        alert("Thank's for the message! I'll get back to you as soon as I can.")
+      )
       .catch((error) => alert(error));
   };
 
