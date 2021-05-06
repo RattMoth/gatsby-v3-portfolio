@@ -29,6 +29,12 @@ const ContactForm = () => {
       .then(() =>
         alert("Thank's for the message! I'll get back to you as soon as I can.")
       )
+      .then(() => {
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+      })
       .catch((error) => alert(error));
   };
 
