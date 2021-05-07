@@ -19,7 +19,7 @@ export const ProjectWrapper = styled.div`
 
     @media (max-width: 960px) {
       mix-blend-mode: ${({ theme }) =>
-        theme === 'light' ? 'unset' : 'difference'};
+        theme === 'dark' ? 'difference' : 'light'};
     }
   }
 `;
