@@ -96,4 +96,5 @@ export const Languages = styled.div`
   padding: 0.125rem;
   background-color: #ebebeb;
   margin: 0 0.5rem;
+  color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};
 `;
