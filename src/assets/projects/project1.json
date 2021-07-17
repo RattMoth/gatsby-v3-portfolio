@@ -1,0 +1,13 @@
+{
+  "name": "project1",
+  "languagesArray": ["lang1", "lang2", "lang3"],
+  "screenshotArray": [
+    {
+      "image": "./screenshots/assignment-status-page.png"
+    },
+    {
+      "image": "./screenshots/ide-featureintro.png"
+    }
+  ],
+  "description": "Proj1 boii.....Body content will contain description lorem ipsum and a cherry on top."
+}

@@ -2,3 +2,9 @@
 #modalBody {
   color: black;
 }
+
+.modal-90w {
+  /* TODO: This seems to have no effect so far */
+  width: 90% !important;
+  height: 90% !important;
+}

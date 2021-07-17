@@ -43,6 +43,7 @@ export const Details = styled.div`
   }
 
   p {
+    text-align: center;
     margin-bottom: 2.5rem;
     font-size: 1.25rem;
     font-weight: normal;
