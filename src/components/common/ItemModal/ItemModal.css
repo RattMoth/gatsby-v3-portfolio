@@ -22,7 +22,6 @@
   }
 }
 
-/* .carousel-control-next,
-.carousel-control-prev {
-  width: 5% !important;
-} */
+#project-description {
+  padding-top: 1rem;
+}

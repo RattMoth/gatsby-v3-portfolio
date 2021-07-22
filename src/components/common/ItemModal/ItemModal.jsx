@@ -44,9 +44,12 @@ const ItemModal = ({ showModal, handleClose, project }) => {
             </Carousel.Item>
           ))}
         </Carousel>
-        {/* This is the Gatsby suggested method so I'll leave it for now. */}
-        {/* eslint-disable-next-line react/no-danger */}
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div
+          id="project-description"
+          // This is the method suggested in the Gatsby docs, so I'll leave it for now
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </Modal.Body>
       <Modal.Footer>
         {(languagesArray || ['Language1', 'Language2', 'Language3']).map(
