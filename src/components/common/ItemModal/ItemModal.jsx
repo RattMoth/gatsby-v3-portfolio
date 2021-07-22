@@ -1,16 +1,20 @@
+/* eslint-disable react/no-array-index-key */
 import * as React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import './ItemModal.css';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import {
+  ArrowRightCircleFill,
+  ArrowLeftCircleFill,
+} from 'react-bootstrap-icons';
 import { Languages } from '../../landing/Projects/styles';
 
 const ItemModal = ({ showModal, handleClose, project }) => {
-  const { name, screenshotArray, description, languagesArray } = project;
+  const { name, screenshotArray, description, languagesArray, id } = project;
 
   return (
     <Modal
-      id="modalMain"
       show={showModal}
       onHide={handleClose}
       centered
@@ -18,14 +22,17 @@ const ItemModal = ({ showModal, handleClose, project }) => {
       dialogClassName="modal-90w"
     >
       <Modal.Header closeButton>
-        <Modal.Title id="modalTitle">
-          Modal heading for {name || 'test'}
-        </Modal.Title>
+        <Modal.Title id="modalTitle">{name}</Modal.Title>
       </Modal.Header>
       <Modal.Body id="modalBody">
-        <Carousel interval={null}>
-          {screenshotArray.map((item) => (
-            <Carousel.Item>
+        <Carousel
+          interval={4000}
+          variant="dark"
+          nextIcon={<ArrowRightCircleFill className="arrow" />}
+          prevIcon={<ArrowLeftCircleFill className="arrow" />}
+        >
+          {screenshotArray.map((item, index) => (
+            <Carousel.Item key={`${id}-carousel${index}`}>
               <GatsbyImage
                 placeholder="blurred"
                 width={1908}
@@ -36,16 +43,13 @@ const ItemModal = ({ showModal, handleClose, project }) => {
             </Carousel.Item>
           ))}
         </Carousel>
-        <p>
-          {description ||
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero nam dolores culpa, obcaecati cum illo ea hic. Tempora quas eum odit repellendus laboriosam eius sed dolores placeat incidunt doloribus!'}
-        </p>
+        <p>{(description.replaceAll('\n'), 'br'.html())}</p>
       </Modal.Body>
       <Modal.Footer>
         {(languagesArray || ['Language1', 'Language2', 'Language3']).map(
-          (language) => (
-            <Languages>
-              <span>{language}</span>
+          (language, index) => (
+            <Languages key={`${id}-languages${index}`}>
+              <span key={`${id}-languages-spa${index}`}>{language}</span>
             </Languages>
           )
         )}

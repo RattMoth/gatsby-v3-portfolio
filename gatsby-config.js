@@ -14,7 +14,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-mdx',
     // 'gatsby-transformer-remark',
     'gatsby-transformer-json',
     'gatsby-plugin-sharp',

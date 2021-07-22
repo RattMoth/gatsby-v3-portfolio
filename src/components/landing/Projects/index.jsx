@@ -1,6 +1,9 @@
-import React, { useContext } from 'react';
+/* eslint-disable react/no-array-index-key */
+//
+import React, { useContext, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { ArrowsFullscreen } from 'react-bootstrap-icons';
 import { Container, Card, TitleWrap } from '../../common';
 import { ThemeContext } from '../../../providers/ThemeProvider';
 
@@ -20,6 +23,7 @@ import ItemModal from '../../common/ItemModal/ItemModal';
 export const Projects = () => {
   const { theme } = useContext(ThemeContext);
   const { showModal, handleClose, handleShow } = useItemModal();
+  const [activeProject, setActiveProject] = useState(null);
   const {
     allProjectsJson: { edges },
   } = useStaticQuery(graphql`
@@ -30,11 +34,16 @@ export const Projects = () => {
             id
             name
             description
+            shortDescription
             languagesArray
             screenshotArray {
               image {
                 childrenImageSharp {
-                  gatsbyImageData(placeholder: BLURRED)
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    height: 987
+                    width: 1908
+                  )
                 }
               }
             }
@@ -44,9 +53,22 @@ export const Projects = () => {
     }
   `);
 
+  const handleModalOpenClick = (targetProject) => {
+    setActiveProject(targetProject);
+    handleShow();
+  };
+
   const projectParagraphText = `Here's a list of some of my web dev projects. At the moment it's mostly made up of my early projects that I have available on my personal GitHub. But as time goes by I'll add some more professional and/or impressive side projects. Thanks for taking a look!`;
+
   return (
     <Wrapper id="projects">
+      {activeProject && (
+        <ItemModal
+          showModal={showModal}
+          handleClose={handleClose}
+          project={activeProject}
+        />
+      )}
       <ProjectWrapper as={Container} theme={theme}>
         <FoldableContainer
           buttonTextWhenOpen="Hide Projects"
@@ -57,32 +79,35 @@ export const Projects = () => {
           <Grid>
             {edges.map((project) => (
               <Item key={project.node.id} theme={theme}>
-                <ItemModal
-                  showModal={showModal}
-                  handleClose={handleClose}
-                  project={project.node}
-                />
                 <Card theme={theme}>
-                  <GatsbyImage
-                    onClick={handleShow}
-                    image={getImage(
-                      project.node.screenshotArray[0].image
-                        .childrenImageSharp[0].gatsbyImageData
-                    )}
-                    placeholder="blurred"
-                    width={1908}
-                    height={987}
-                    alt={`Screenshot for ${project.node.name}`}
-                  />
+                  <div className="image-container">
+                    <ArrowsFullscreen className="fullscreen-icon" />
+                    <GatsbyImage
+                      className="gatsby-img"
+                      onClick={() => handleModalOpenClick(project.node)}
+                      image={getImage(
+                        project.node.screenshotArray[0].image
+                          .childrenImageSharp[0].gatsbyImageData
+                      )}
+                      placeholder="blurred"
+                      width={1908}
+                      height={987}
+                      alt={`Screenshot for ${project.node.name}`}
+                    />
+                  </div>
                   <Content>
-                    <h4>Cat {project.node.name || 'noname'}</h4>
-                    <div>This is a placeholder cat. How nice!</div>
+                    <h4>{project.node.name}</h4>
+                    <div>{project.node.shortDescription}</div>
                   </Content>
                   <TitleWrap>
                     <Stats theme={theme}>
-                      {project.node.languagesArray.map((language) => (
-                        <Languages>
-                          <span key={`${project.node.id}_key`}>{language}</span>
+                      {project.node.languagesArray.map((language, index) => (
+                        <Languages
+                          key={`${project.node.id}-languages-key${index}`}
+                        >
+                          <span key={`${project.node.id}-span-key${index}`}>
+                            {language}
+                          </span>
                         </Languages>
                       ))}
                     </Stats>

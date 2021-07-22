@@ -9,13 +9,13 @@ Subject: To do list for getting this project ready to go
 1. Test StaticImage with local files. Determine how to pass array of uris DONE
 2. Test graphql querying a folder of screenshots, see if can grab array of file locations? DONE
 
-- Add qualifiers to gatsbyImageData
-  1. Fix image aspect ratio/size to make all the same
-  2. Experiment with different placeholders
-  3. Ensure lazy loading is active
-- pass object to modal after setting activeProject state
+- Add qualifiers to gatsbyImageData DONE
+  1. Fix image aspect ratio/size to make all the same DONE
+  2. Experiment with different placeholders DONE
+  3. Ensure lazy loading is active DONE
+- pass object to modal after setting activeProject state DONE
 - ensure touch controlls work
-- make modal size bigger
+- make modal size bigger DONE
 - make card click behavior better/more clear
 - make carousel controlls more visible
 
