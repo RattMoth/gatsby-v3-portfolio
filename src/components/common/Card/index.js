@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
+  cursor: pointer;
   padding: 1rem;
   background: ${({ theme }) => (theme === 'dark' ? '#181717' : '#fff')};
   height: 100%;
   border-radius: 10px;
 
   .gatsby-img:hover {
-    cursor: pointer;
     -webkit-transform: scale(1.01);
     -ms-transform: scale(1.01);
     transform: scale(1.01);
@@ -26,10 +26,8 @@ export const Card = styled.div`
   }
 
   .fullscreen-icon {
-    position: absolute;
-    z-index: 1;
-    top: 5px;
-    right: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 `;
 

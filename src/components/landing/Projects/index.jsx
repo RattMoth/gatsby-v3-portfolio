@@ -91,12 +91,13 @@ export const Projects = () => {
           <Grid>
             {edges.map((project) => (
               <Item key={project.node.id} theme={theme}>
-                <Card theme={theme}>
+                <Card
+                  theme={theme}
+                  onClick={() => handleModalOpenClick(project.node)}
+                >
                   <div className="image-container">
-                    <ArrowsFullscreen className="fullscreen-icon" />
                     <GatsbyImage
                       className="gatsby-img"
-                      onClick={() => handleModalOpenClick(project.node)}
                       image={getImage(
                         project.node.frontmatter.screenshotArray[0].image
                           .childrenImageSharp[0].gatsbyImageData
@@ -125,6 +126,7 @@ export const Projects = () => {
                         )
                       )}
                     </Stats>
+                    <ArrowsFullscreen className="fullscreen-icon" />
                   </TitleWrap>
                 </Card>
               </Item>
