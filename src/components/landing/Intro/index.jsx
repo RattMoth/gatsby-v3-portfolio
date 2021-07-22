@@ -33,7 +33,7 @@ export const Intro = () => {
                 <p>(bad) chess player.</p>
                 <p>fountain pen collector.</p>
                 <p>ThinkPad fanboy.</p>
-                <p>houseplant owner.</p>
+                <p>houseplant caretaker.</p>
                 <p>lifelong learner.</p>
               </TextLoop>
             </h4>

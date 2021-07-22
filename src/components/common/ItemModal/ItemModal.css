@@ -1,10 +1,11 @@
 #modalTitle,
 #modalBody {
   color: black;
+  padding-bottom: 0;
 }
 
 .modal-lg {
-  max-width: 75vw !important;
+  max-width: 70vw !important;
   margin: auto !important;
 }
 

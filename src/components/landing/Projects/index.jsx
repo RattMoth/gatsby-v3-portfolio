@@ -6,6 +6,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { ArrowsFullscreen } from 'react-bootstrap-icons';
 import { Container, Card, TitleWrap } from '../../common';
 import { ThemeContext } from '../../../providers/ThemeProvider';
+import resume from '../../../../static/documents/matt-roth-resume.pdf';
 
 import {
   ProjectWrapper,
@@ -25,25 +26,27 @@ export const Projects = () => {
   const { showModal, handleClose, handleShow } = useItemModal();
   const [activeProject, setActiveProject] = useState(null);
   const {
-    allProjectsJson: { edges },
+    allMarkdownRemark: { edges },
   } = useStaticQuery(graphql`
     {
-      allProjectsJson {
+      allMarkdownRemark {
         edges {
           node {
             id
-            name
-            description
-            shortDescription
-            languagesArray
-            screenshotArray {
-              image {
-                childrenImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    height: 987
-                    width: 1908
-                  )
+            html
+            frontmatter {
+              name
+              languagesArray
+              shortDescription
+              screenshotArray {
+                image {
+                  childrenImageSharp {
+                    gatsbyImageData(
+                      placeholder: BLURRED
+                      height: 987
+                      width: 1908
+                    )
+                  }
                 }
               }
             }
@@ -58,7 +61,16 @@ export const Projects = () => {
     handleShow();
   };
 
-  const projectParagraphText = `Here's a list of some of my web dev projects. At the moment it's mostly made up of my early projects that I have available on my personal GitHub. But as time goes by I'll add some more professional and/or impressive side projects. Thanks for taking a look!`;
+  const projectParagraphText = (
+    <span>
+      Here is a small display of my past projects. While not exhaustive,
+      I&apos;ve tried to select projects that highlight the skills listed in{' '}
+      <a href={resume} target="_blank" rel="noreferrer">
+        my resume.{' '}
+      </a>
+      Thanks for taking a look!
+    </span>
+  );
 
   return (
     <Wrapper id="projects">
@@ -86,30 +98,32 @@ export const Projects = () => {
                       className="gatsby-img"
                       onClick={() => handleModalOpenClick(project.node)}
                       image={getImage(
-                        project.node.screenshotArray[0].image
+                        project.node.frontmatter.screenshotArray[0].image
                           .childrenImageSharp[0].gatsbyImageData
                       )}
                       placeholder="blurred"
                       width={1908}
                       height={987}
-                      alt={`Screenshot for ${project.node.name}`}
+                      alt={`Screenshot for ${project.node.frontmatter.name}`}
                     />
                   </div>
                   <Content>
-                    <h4>{project.node.name}</h4>
-                    <div>{project.node.shortDescription}</div>
+                    <h4>{project.node.frontmatter.name}</h4>
+                    <div>{project.node.frontmatter.shortDescription}</div>
                   </Content>
                   <TitleWrap>
                     <Stats theme={theme}>
-                      {project.node.languagesArray.map((language, index) => (
-                        <Languages
-                          key={`${project.node.id}-languages-key${index}`}
-                        >
-                          <span key={`${project.node.id}-span-key${index}`}>
-                            {language}
-                          </span>
-                        </Languages>
-                      ))}
+                      {project.node.frontmatter.languagesArray.map(
+                        (language, index) => (
+                          <Languages
+                            key={`${project.node.id}-languages-key${index}`}
+                          >
+                            <span key={`${project.node.id}-span-key${index}`}>
+                              {language}
+                            </span>
+                          </Languages>
+                        )
+                      )}
                     </Stats>
                   </TitleWrap>
                 </Card>

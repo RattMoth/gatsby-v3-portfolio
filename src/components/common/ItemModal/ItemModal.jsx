@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import * as React from 'react';
+import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import './ItemModal.css';
@@ -11,7 +11,8 @@ import {
 import { Languages } from '../../landing/Projects/styles';
 
 const ItemModal = ({ showModal, handleClose, project }) => {
-  const { name, screenshotArray, description, languagesArray, id } = project;
+  const { id, html } = project;
+  const { name, screenshotArray, languagesArray } = project.frontmatter;
 
   return (
     <Modal
@@ -43,7 +44,9 @@ const ItemModal = ({ showModal, handleClose, project }) => {
             </Carousel.Item>
           ))}
         </Carousel>
-        <p>{(description.replaceAll('\n'), 'br'.html())}</p>
+        {/* This is the Gatsby suggested method so I'll leave it for now. */}
+        {/* eslint-disable-next-line react/no-danger */}
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </Modal.Body>
       <Modal.Footer>
         {(languagesArray || ['Language1', 'Language2', 'Language3']).map(
@@ -53,12 +56,6 @@ const ItemModal = ({ showModal, handleClose, project }) => {
             </Languages>
           )
         )}
-        {/* <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={handleClose}>
-          Save Changes
-        </Button> */}
       </Modal.Footer>
     </Modal>
   );

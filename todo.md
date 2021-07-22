@@ -43,6 +43,15 @@ Subject: To do list for getting this project ready to go
   - Ensure lazy loading still functions after these changes
 5. Update language tick styling to make font easier to read DONE
 
+### Projects to add
+
+- IDE
+- Avatar
+- Vocab
+- Sax app
+- Old portfolio?
+- Face recognition?
+
 ### Resume link
 
 1. Utilize node file/folder (??) to remove hashing from the resume's static file
