@@ -16,7 +16,6 @@ const ItemModal = ({ showModal, handleClose, project }) => {
   const [showControls, setShowControls] = useState(false);
 
   useEffect(() => {
-    console.log(screenshotArray.length);
     setShowControls(screenshotArray.length !== 1);
   }, [screenshotArray]);
 

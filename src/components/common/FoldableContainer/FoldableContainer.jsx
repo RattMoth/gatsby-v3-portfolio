@@ -70,7 +70,7 @@ export const FoldableContainer = (props) => {
 
 FoldableContainer.propTypes = {
   headerText: PropTypes.string,
-  paragraphText: PropTypes.string,
+  paragraphText: PropTypes.node,
   buttonTextWhenClosed: PropTypes.string,
   buttonTextWhenOpen: PropTypes.string,
   children: PropTypes.oneOfType([
