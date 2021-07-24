@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import './ItemModal.css';
@@ -13,6 +13,12 @@ import { Languages } from '../../landing/Projects/styles';
 const ItemModal = ({ showModal, handleClose, project }) => {
   const { id, html } = project;
   const { name, screenshotArray, languagesArray } = project.frontmatter;
+  const [showControls, setShowControls] = useState(false);
+
+  useEffect(() => {
+    console.log(screenshotArray.length);
+    setShowControls(screenshotArray.length !== 1);
+  }, [screenshotArray]);
 
   return (
     <Modal
@@ -27,7 +33,9 @@ const ItemModal = ({ showModal, handleClose, project }) => {
       </Modal.Header>
       <Modal.Body id="modalBody">
         <Carousel
-          interval={4000}
+          indicators={showControls}
+          controls={showControls}
+          interval={6500}
           variant="dark"
           nextIcon={<ArrowRightCircleFill className="arrow" />}
           prevIcon={<ArrowLeftCircleFill className="arrow" />}

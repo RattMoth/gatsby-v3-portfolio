@@ -29,12 +29,13 @@ export const Projects = () => {
     allMarkdownRemark: { edges },
   } = useStaticQuery(graphql`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___sortOrder }) {
         edges {
           node {
             id
             html
             frontmatter {
+              sortOrder
               name
               languagesArray
               shortDescription

@@ -44,10 +44,9 @@ Subject: To do list for getting this project ready to go
 5. Update language tick styling to make font easier to read DONE
 
 ### Projects to add
-
-- IDE
-- Avatar
-- Vocab
+- IDE DONE
+- Avatar DONE
+- Vocab DONE
 - Sax app
 - Old portfolio?
 - Face recognition?

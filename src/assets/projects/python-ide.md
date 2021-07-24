@@ -1,6 +1,7 @@
 ---
+  "sortOrder": 1
   "name": "Interactive Python IDE"
-  "languagesArray": ["React", "Web Sockets", "Brython"]
+  "languagesArray": ["React/Typescript", "Web Sockets", "Brython"]
   "shortDescription": "A real-time IDE used for teaching students basic Python."
   "screenshotArray": [
     {
