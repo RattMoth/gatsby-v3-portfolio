@@ -44,7 +44,11 @@ export const Item = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.11);
+  border-radius: 5px;
+  box-shadow: ${({ theme }) =>
+    theme === 'dark'
+      ? '0 1px 6px 0 rgba(255, 255, 255, 0.29)'
+      : '0 1px 6px 0 rgba(0, 0, 0, 0.11)'};
 
   h4 {
     color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#19323C')};
@@ -70,7 +74,7 @@ export const Content = styled.div`
 export const Stats = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
 
   div {
     display: flex;
@@ -96,4 +100,5 @@ export const Languages = styled.div`
   padding: 0.125rem;
   background-color: #ebebeb;
   margin: 0 0.5rem;
+  color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};
 `;

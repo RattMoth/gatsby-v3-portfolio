@@ -1,0 +1,31 @@
+#modalTitle,
+#modalBody {
+  color: black;
+  padding-bottom: 0;
+}
+
+.modal-lg {
+  max-width: 70vw !important;
+  margin: auto !important;
+}
+
+.arrow {
+  background-color: black;
+  border-radius: 100%;
+  height: 35px;
+  width: 35px;
+}
+
+@media (max-width: 960px) {
+  .modal-lg {
+    max-width: 100vw !important;
+  }
+}
+
+#project-description {
+  padding-top: 1rem;
+}
+
+.carousel-indicators li {
+  border: 1px solid rgba(68, 66, 66, 0.541) !important;
+}

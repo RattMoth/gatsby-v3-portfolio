@@ -6,7 +6,6 @@ import twitter from '../../../assets/icons/twitter.png';
 import { Container } from '../../common/Container';
 import { Wrapper, Details, ContactWrapper } from './styles';
 import { ThemeContext } from '../../../providers/ThemeProvider';
-// eslint-disable-next-line
 import ContactForm from '../../common/ContactForm';
 
 export const Contact = () => {
