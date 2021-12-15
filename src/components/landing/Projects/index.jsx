@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { ArrowsFullscreen } from 'react-bootstrap-icons';
 import { Container, Card, TitleWrap } from '../../common';
 import { ThemeContext } from '../../../providers/ThemeProvider';
-import resume from '../../../../static/documents/matt-roth-resume.pdf';
+import resume from '../../../../static/matt-roth-resume.pdf';
 
 import {
   ProjectWrapper,

@@ -1,25 +1,26 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../../../providers/ThemeProvider';
+import React from 'react';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
+import { Link } from 'gatsby';
 import { Container } from '../../../common';
 import NavbarLinks from '../NavbarLinks';
-import { Wrapper, Brand, ThemeTogglerDiv } from './styles';
+import { Wrapper, ThemeTogglerDiv } from './styles';
 import ToggleTheme from '../ToggleTheme';
-import resume from '../../../../../static/documents/matt-roth-resume.pdf';
 
-const Navbar = () => {
-  const { theme } = useContext(ThemeContext);
-
-  return (
-    <Wrapper as={Container}>
-      <Brand href={resume} target="_blank" theme={theme}>
-        My Résumé
-      </Brand>
-      <NavbarLinks desktop />
-      <ThemeTogglerDiv>
-        <ToggleTheme />
-      </ThemeTogglerDiv>
-    </Wrapper>
-  );
-};
+const Navbar = () => (
+  <Wrapper as={Container}>
+    <DropdownButton id="resume-dropdown" title="My Résumé" size="sm">
+      <Link className="dropdown-item" to="/resume">
+        View Online
+      </Link>
+      <Dropdown.Item href="matt-roth-resume.pdf" download>
+        Download a Copy
+      </Dropdown.Item>
+    </DropdownButton>
+    <NavbarLinks desktop />
+    <ThemeTogglerDiv>
+      <ToggleTheme />
+    </ThemeTogglerDiv>
+  </Wrapper>
+);
 
 export default Navbar;
