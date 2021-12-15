@@ -1,4 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState } from 'react';
+import { navigate } from 'gatsby';
+import { Button } from 'react-bootstrap';
+import { ArrowLeft, Download } from 'react-bootstrap-icons';
 import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
@@ -17,8 +20,13 @@ export default function Resume() {
     // Adjust scale slightly to allow for some padding
     pageScale -= 0.25;
 
+    // For wide monitors
     if (pageScale > 1.4) {
       setScale(1.4);
+    }
+    // For mobile
+    if (pageScale < 0.75) {
+      setScale(0.75);
     } else {
       setScale(pageScale);
     }
@@ -26,6 +34,14 @@ export default function Resume() {
 
   return (
     <div id="pdfDocument">
+      <div id="navbuttons" className="d-flex justify-content-between">
+        <Button size="sm" onClick={() => navigate('/')}>
+          <ArrowLeft /> Back to Portfolio Page
+        </Button>
+        <Button size="sm" download href="matt-roth-resume.pdf">
+          <Download /> Download a Copy
+        </Button>
+      </div>
       <Document externalLinkTarget="_blank" file={resume}>
         <Page
           id="pdfPage"
@@ -38,8 +54,3 @@ export default function Resume() {
     </div>
   );
 }
-
-/* TODO: 
-Add rotate device popup?
-Or maybe media query to handle scaling on mobile
-*/

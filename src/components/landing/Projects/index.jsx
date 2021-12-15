@@ -73,6 +73,11 @@ export const Projects = () => {
     </span>
   );
 
+  /** TODO:
+   * Add tooltip to card
+   * Set first child to active/hover/whatever until user interaction
+   */
+
   return (
     <Wrapper id="projects">
       {activeProject && (
