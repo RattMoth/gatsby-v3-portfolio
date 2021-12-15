@@ -26,7 +26,6 @@ export default function Resume() {
 
   return (
     <div id="pdfDocument">
-      <h1 id="info">Rotate</h1>
       <Document externalLinkTarget="_blank" file={resume}>
         <Page
           id="pdfPage"
