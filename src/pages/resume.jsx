@@ -20,12 +20,9 @@ export default function Resume() {
     // Adjust scale slightly to allow for some padding
     pageScale -= 0.25;
 
-    // For wide monitors
     if (pageScale > 1.4) {
       setScale(1.4);
-    }
-    // For mobile
-    if (pageScale < 0.75) {
+    } else if (pageScale < 0.75) {
       setScale(0.75);
     } else {
       setScale(pageScale);
@@ -55,6 +52,11 @@ export default function Resume() {
           pageNumber={1}
           className="resume-page"
           onLoadSuccess={calculateScale}
+          error={
+            <div style={{ color: 'white' }}>
+              Failed to load PDF. Please refresh the page.
+            </div>
+          }
         />
       </Document>
     </div>
