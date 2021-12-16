@@ -20,20 +20,25 @@ const ToggleTheme = () => {
   };
 
   React.useEffect(() => {
-    if (prefersDarkMode) {
+    if (prefersDarkMode && window.localStorage.getItem('theme') === 'dark') {
       showTooltip();
     }
   }, [prefersDarkMode]);
 
   return (
     <Wrapper type="button" onClick={toggleTheme}>
-      <ReactTooltip delayShow={2000} place="bottom" id="theme-tooltip" />
+      <ReactTooltip
+        backgroundColor="#2f3435"
+        delayShow={2000}
+        place="bottom"
+        id="theme-tooltip"
+      />
       <img
         ref={themeRef}
         src={theme === 'dark' ? sunIcon : moonIcon}
         alt={theme}
         data-for="theme-tooltip"
-        data-tip="Your browser is set to prefer dark mode. Click here to toggle theme."
+        data-tip="Your browser is set to prefer dark mode. If you like, click here to toggle theme."
       />
     </Wrapper>
   );
