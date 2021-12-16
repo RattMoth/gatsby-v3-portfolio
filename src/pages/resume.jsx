@@ -38,7 +38,13 @@ export default function Resume() {
         <Button size="sm" onClick={() => navigate('/')}>
           <ArrowLeft /> Back to Portfolio Page
         </Button>
-        <Button size="sm" download href="matt-roth-resume.pdf">
+        <Button
+          data-toggle="tooltip"
+          data-placement="bottom"
+          size="sm"
+          download
+          href="matt-roth-resume.pdf"
+        >
           <Download /> Download a Copy
         </Button>
       </div>

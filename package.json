@@ -44,6 +44,7 @@
     "react-pdf": "^5.5.0",
     "react-reveal": "^1.2.2",
     "react-text-loop": "^2.3.0",
+    "react-tooltip": "^4.2.21",
     "styled-components": "^5.2.3"
   },
   "devDependencies": {

@@ -1,12 +1,11 @@
 /* eslint-disable react/no-array-index-key */
 //
 import React, { useContext, useState } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { ArrowsFullscreen } from 'react-bootstrap-icons';
 import { Container, Card, TitleWrap } from '../../common';
 import { ThemeContext } from '../../../providers/ThemeProvider';
-import resume from '../../../../static/matt-roth-resume.pdf';
 
 import {
   ProjectWrapper,
@@ -66,9 +65,9 @@ export const Projects = () => {
     <span>
       Here is a small display of my past projects. While not exhaustive,
       I&apos;ve tried to select projects that highlight the skills listed in{' '}
-      <a href={resume} target="_blank" rel="noreferrer">
-        my resume.{' '}
-      </a>
+      <Link to="/resume" target="_blank" rel="noreferrer">
+        my résumé.{' '}
+      </Link>
       Thanks for taking a look!
     </span>
   );
