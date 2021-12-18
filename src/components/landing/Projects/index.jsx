@@ -103,8 +103,8 @@ export const Projects = () => {
           <ReactTooltip effect="solid" event="hover" scrollHide={false} />
           <Grid>
             {edges.map((project, i) => (
-              <>
-                <Item key={project.node.id} theme={theme}>
+              <div key={project.node.id}>
+                <Item theme={theme}>
                   <Card
                     ref={i === 0 ? cardRef : null}
                     data-tip={i === 0 ? 'Click any card for details' : null}
@@ -146,7 +146,7 @@ export const Projects = () => {
                     </TitleWrap>
                   </Card>
                 </Item>
-              </>
+              </div>
             ))}
           </Grid>
         </FoldableContainer>

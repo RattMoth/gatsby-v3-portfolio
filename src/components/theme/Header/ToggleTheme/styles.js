@@ -16,7 +16,12 @@ export const Wrapper = styled.button`
     text-align: left;
   }
 
+  @media (min-width: 76px) {
+    padding-right: 2.5rem;
+  }
+
   img {
+    // padding-left: 1.5rem;
     margin-bottom: unset;
   }
 `;

@@ -13,18 +13,24 @@ const ToggleTheme = () => {
     ReactTooltip.show(themeRef.current);
   };
 
+  const handleClick = () => {
+    toggleTheme();
+    ReactTooltip.hide(themeRef.current);
+  };
+
   useEffect(() => {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
       .matches;
     if (prefersDarkMode) {
       showTooltip();
     }
-  });
+  }, []);
 
   return (
-    <Wrapper type="button" onClick={toggleTheme}>
+    <Wrapper type="button" onClick={handleClick}>
       <ReactTooltip
-        clickable
+        style={{ width: '15ch !important' }}
+        html
         backgroundColor="#2f3435"
         delayShow={2000}
         place="bottom"
@@ -35,7 +41,8 @@ const ToggleTheme = () => {
         src={theme === 'dark' ? sunIcon : moonIcon}
         alt={theme}
         data-for="theme-tooltip"
-        data-tip="Your browser is set to prefer dark mode. If you like, click here to toggle theme."
+        data-tip="Your device auto-selected dark mode."
+        // data-tip="Lorem ipsum dolor sit amet consectetur adipisicing elit. Et modi officia expedita nisi, quasi quae."
       />
     </Wrapper>
   );
