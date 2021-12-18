@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useRef, useContext, useEffect } from 'react';
 import ReactTooltip from 'react-tooltip';
-import useMedia from '../../../../hooks/useMedia';
 import sunIcon from '../../../../assets/icons/sun.svg';
 import moonIcon from '../../../../assets/icons/moon.svg';
 import { ThemeContext } from '../../../../providers/ThemeProvider';
@@ -8,26 +7,24 @@ import { Wrapper } from './styles';
 
 const ToggleTheme = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const themeRef = React.useRef();
-  const prefersDarkMode = useMedia(
-    ['(prefers-color-scheme: dark)'],
-    [true],
-    false
-  );
+  const themeRef = useRef();
 
   const showTooltip = () => {
     ReactTooltip.show(themeRef.current);
   };
 
-  React.useEffect(() => {
-    if (prefersDarkMode && window.localStorage.getItem('theme') === 'dark') {
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+      .matches;
+    if (prefersDarkMode) {
       showTooltip();
     }
-  }, [prefersDarkMode]);
+  });
 
   return (
     <Wrapper type="button" onClick={toggleTheme}>
       <ReactTooltip
+        clickable
         backgroundColor="#2f3435"
         delayShow={2000}
         place="bottom"

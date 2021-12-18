@@ -1,9 +1,10 @@
 /* eslint-disable react/no-array-index-key */
 //
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState, useEffect } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { ArrowsFullscreen } from 'react-bootstrap-icons';
+import ReactTooltip from 'react-tooltip';
 import { Container, Card, TitleWrap } from '../../common';
 import { ThemeContext } from '../../../providers/ThemeProvider';
 
@@ -24,6 +25,7 @@ export const Projects = () => {
   const { theme } = useContext(ThemeContext);
   const { showModal, handleClose, handleShow } = useItemModal();
   const [activeProject, setActiveProject] = useState(null);
+  const cardRef = useRef();
   const {
     allMarkdownRemark: { edges },
   } = useStaticQuery(graphql`
@@ -55,6 +57,11 @@ export const Projects = () => {
       }
     }
   `);
+
+  useEffect(() => {
+    // Show tooltip on initial load
+    // ReactTooltip.show(cardRef.current);
+  }, []);
 
   const handleModalOpenClick = (targetProject) => {
     setActiveProject(targetProject);
@@ -93,48 +100,53 @@ export const Projects = () => {
           headerText="Projects"
           paragraphText={projectParagraphText}
         >
+          <ReactTooltip effect="solid" event="hover" scrollHide={false} />
           <Grid>
-            {edges.map((project) => (
-              <Item key={project.node.id} theme={theme}>
-                <Card
-                  theme={theme}
-                  onClick={() => handleModalOpenClick(project.node)}
-                >
-                  <div className="image-container">
-                    <GatsbyImage
-                      className="gatsby-img"
-                      image={getImage(
-                        project.node.frontmatter.screenshotArray[0].image
-                          .childrenImageSharp[0].gatsbyImageData
-                      )}
-                      placeholder="blurred"
-                      width={1908}
-                      height={987}
-                      alt={`Screenshot for ${project.node.frontmatter.name}`}
-                    />
-                  </div>
-                  <Content>
-                    <h4>{project.node.frontmatter.name}</h4>
-                    <div>{project.node.frontmatter.shortDescription}</div>
-                  </Content>
-                  <TitleWrap>
-                    <Stats theme={theme}>
-                      {project.node.frontmatter.languagesArray.map(
-                        (language, index) => (
-                          <Languages
-                            key={`${project.node.id}-languages-key${index}`}
-                          >
-                            <span key={`${project.node.id}-span-key${index}`}>
-                              {language}
-                            </span>
-                          </Languages>
-                        )
-                      )}
-                    </Stats>
-                    <ArrowsFullscreen className="fullscreen-icon" />
-                  </TitleWrap>
-                </Card>
-              </Item>
+            {edges.map((project, i) => (
+              <>
+                <Item key={project.node.id} theme={theme}>
+                  <Card
+                    ref={i === 0 ? cardRef : null}
+                    data-tip={i === 0 ? 'Click any card for details' : null}
+                    theme={theme}
+                    onClick={() => handleModalOpenClick(project.node)}
+                  >
+                    <div className="image-container">
+                      <GatsbyImage
+                        className="gatsby-img"
+                        image={getImage(
+                          project.node.frontmatter.screenshotArray[0].image
+                            .childrenImageSharp[0].gatsbyImageData
+                        )}
+                        placeholder="blurred"
+                        width={1908}
+                        height={987}
+                        alt={`Screenshot for ${project.node.frontmatter.name}`}
+                      />
+                    </div>
+                    <Content>
+                      <h4>{project.node.frontmatter.name}</h4>
+                      <div>{project.node.frontmatter.shortDescription}</div>
+                    </Content>
+                    <TitleWrap>
+                      <Stats theme={theme}>
+                        {project.node.frontmatter.languagesArray.map(
+                          (language, index) => (
+                            <Languages
+                              key={`${project.node.id}-languages-key${index}`}
+                            >
+                              <span key={`${project.node.id}-span-key${index}`}>
+                                {language}
+                              </span>
+                            </Languages>
+                          )
+                        )}
+                      </Stats>
+                      <ArrowsFullscreen className="fullscreen-icon" />
+                    </TitleWrap>
+                  </Card>
+                </Item>
+              </>
             ))}
           </Grid>
         </FoldableContainer>

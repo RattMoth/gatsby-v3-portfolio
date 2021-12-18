@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.button`
+  padding-right: 1rem;
   background: none;
   border: none;
   cursor: pointer;

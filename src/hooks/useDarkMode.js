@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
-import useMedia from './useMedia';
+// import useMedia from './useMedia';
 
 export default () => {
   const [theme, setTheme] = useState('light');
 
-  const prefersDarkMode = useMedia(
-    ['(prefers-color-scheme: dark)'],
-    [true],
-    false
-  );
+  // const prefersDarkMode = useMedia(
+  //   ['(prefers-color-scheme: dark)'],
+  //   [true],
+  //   false
+  // );
+  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+    .matches;
 
   const toggleTheme = () => {
     if (theme === 'light') {
