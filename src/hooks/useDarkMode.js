@@ -14,10 +14,10 @@ export default () => {
 
   const toggleTheme = () => {
     if (theme === 'light') {
-      window.localStorage.setItem('theme', 'dark');
+      // window.localStorage.setItem('theme', 'dark');
       setTheme('dark');
     } else {
-      window.localStorage.setItem('theme', 'light');
+      // window.localStorage.setItem('theme', 'light');
       setTheme('light');
     }
   };
@@ -28,15 +28,17 @@ export default () => {
     }
     if (prefersDarkMode) {
       setTheme('dark');
-    } else {
-      const localTheme = window.localStorage.getItem('theme');
-      if (localTheme) {
-        setTheme(localTheme);
-        window.localStorage.setItem('theme', localTheme);
-      } else {
-        setTheme('light');
-      }
     }
+    // else {
+    // const localTheme = window.localStorage.getItem('theme');
+    // if (localTheme) {
+    //   setTheme(localTheme);
+    //   window.localStorage.setItem('theme', localTheme);
+    // }
+    else {
+      setTheme('light');
+    }
+    // }
   }, [prefersDarkMode]);
 
   return [theme, toggleTheme];

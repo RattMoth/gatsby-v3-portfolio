@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.button`
-  padding-right: 1rem;
+  padding: 0 1rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -14,10 +14,15 @@ export const Wrapper = styled.button`
 
   @media (max-width: 960px) {
     text-align: left;
+    margin-left: 1rem;
   }
 
-  @media (min-width: 76px) {
-    padding-right: 2.5rem;
+  @media (max-width: 959px) {
+    margin-right: 1.75rem;
+  }
+
+  @media (max-width: 490px) {
+    margin-right: 2.75rem;
   }
 
   img {
