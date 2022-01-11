@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   z-index: 5;
-  top: 1.8rem;
+  top: 2rem;
   right: 1.8rem;
   display: none;
   cursor: pointer;

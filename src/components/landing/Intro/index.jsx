@@ -22,19 +22,18 @@ export const Intro = () => {
             <h4>
               My name is Matt Roth. I&apos;m a Full Stack Web Developer and{' '}
               <TextLoop
-                adjustingSpeed="5"
-                delay="1500"
-                interval={[3000, 5500, 5500, 5500, 5500, 5500]}
+                delay={1000}
+                interval={3000}
                 springConfig={{ stiffness: 200, damping: 30 }}
               >
-                <p>Linux enthusiast.</p>
+                <p>lifelong learner.</p>
+                <p>Linux hobbiest.</p>
                 <p>backpacker.</p>
                 <p>coffee nerd.</p>
                 <p>(bad) chess player.</p>
                 <p>fountain pen collector.</p>
                 <p>ThinkPad fanboy.</p>
-                <p>houseplant caretaker.</p>
-                <p>lifelong learner.</p>
+                <p>astronomy nerd.</p>
               </TextLoop>
             </h4>
           </Fade>

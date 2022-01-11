@@ -1,12 +1,10 @@
 /* eslint-disable react/no-array-index-key */
 //
 import React, { useContext, useState } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ArrowsFullscreen } from 'react-bootstrap-icons';
 import { Container, Card, TitleWrap } from '../../common';
 import { ThemeContext } from '../../../providers/ThemeProvider';
-import resume from '../../../../static/documents/matt-roth-resume.pdf';
 
 import {
   ProjectWrapper,
@@ -66,10 +64,18 @@ export const Projects = () => {
     <span>
       Here is a small display of my past projects. While not exhaustive,
       I&apos;ve tried to select projects that highlight the skills listed in{' '}
-      <a href={resume} target="_blank" rel="noreferrer">
-        my resume.{' '}
-      </a>
-      Thanks for taking a look!
+      <Link
+        to="/resume"
+        target="_blank"
+        rel="noreferrer"
+        style={{
+          color: theme === 'dark' ? 'white' : '#0056b3',
+          textDecoration: 'underline',
+        }}
+      >
+        my résumé
+      </Link>
+      . Thanks for taking a look!
     </span>
   );
 
@@ -90,12 +96,9 @@ export const Projects = () => {
           paragraphText={projectParagraphText}
         >
           <Grid>
-            {edges.map((project) => (
+            {edges.map((project, i) => (
               <Item key={project.node.id} theme={theme}>
-                <Card
-                  theme={theme}
-                  onClick={() => handleModalOpenClick(project.node)}
-                >
+                <Card theme={theme}>
                   <div className="image-container">
                     <GatsbyImage
                       className="gatsby-img"
@@ -110,7 +113,26 @@ export const Projects = () => {
                     />
                   </div>
                   <Content>
-                    <h4>{project.node.frontmatter.name}</h4>
+                    <div className="d-flex">
+                      <h4 style={{ marginTop: '0.5rem' }}>
+                        {project.node.frontmatter.name}
+                      </h4>{' '}
+                      <button
+                        onClick={() => handleModalOpenClick(project.node)}
+                        type="button"
+                        className="btn btn-sm btn-outline-info ml-auto align-self-start"
+                        style={
+                          theme === 'dark'
+                            ? {
+                                color: '#fff',
+                                borderColor: '#fff',
+                              }
+                            : null
+                        }
+                      >
+                        <small>Expand details</small>
+                      </button>
+                    </div>
                     <div>{project.node.frontmatter.shortDescription}</div>
                   </Content>
                   <TitleWrap>
@@ -127,7 +149,6 @@ export const Projects = () => {
                         )
                       )}
                     </Stats>
-                    <ArrowsFullscreen className="fullscreen-icon" />
                   </TitleWrap>
                 </Card>
               </Item>

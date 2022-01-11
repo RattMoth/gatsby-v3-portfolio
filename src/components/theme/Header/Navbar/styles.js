@@ -15,11 +15,3 @@ export const Brand = styled.a`
       theme === 'dark' ? 'difference' : 'unset'};
   }
 `;
-
-export const ThemeTogglerDiv = styled.div`
-  position: sticky;
-  right: 60px;
-  @media (min-width: 961px) {
-    display: none;
-  }
-`;

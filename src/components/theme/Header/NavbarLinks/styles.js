@@ -15,7 +15,9 @@ export const Wrapper = styled.div`
     desktop
       ? `
 			align-items: center;
+			justify-content: flex-end;
 			display: flex;
+			margin-left: auto;
 
 			@media (max-width: 960px) {
 					display: none;
@@ -25,7 +27,7 @@ export const Wrapper = styled.div`
 					margin-right: 1rem;
 
 					&:last-child {
-							margin-right: unset;
+						margin-right: unset;
 					}
 			}
 		`

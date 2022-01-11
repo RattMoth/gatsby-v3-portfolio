@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button, Collapse } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -40,11 +40,11 @@ export const FoldableContainer = (props) => {
   // });
 
   // For initial page load. I know, there has to be a better way
-  useEffect(() => {
-    if (window.innerWidth <= 680) {
-      setIsOpen(false);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.innerWidth <= 680) {
+  //     setIsOpen(false);
+  //   }
+  // }, []);
 
   return (
     <>

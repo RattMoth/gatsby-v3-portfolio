@@ -1,12 +1,3 @@
-// exports.createSchemaCustomization = ({ actions }) => {
-//   const { createTypes } = actions;
-//   const typeDefs = `
-//     type ProjectsJson implements Node {
-//       screenshotArray: [File]
-//     }
-//   `;
-//   createTypes(typeDefs);
-// };
 /**
  * gatsby internal api hook that will be triggered after each node is created
  * @param {Object} node is the internal gatsby node "object" that will be available in the data layer i.e graphQL layer
@@ -26,6 +17,31 @@ exports.onCreateNode = ({ node, actions }) => {
       value: node.screenshotArray.map(
         (image) => `./../src/images/${image.src}`
       ), // Injects the value, this will be relative to the path of the json, it will look into /src/images
+    });
+  }
+};
+
+/* Due to gatsby's 'SSR' approach, canvas wasn't working properly once built.
+Fix was to npm i canvas and add this bit below, which ignores canvas during the build process.
+*/
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /canvas/,
+            use: loaders.null(),
+          },
+        ],
+      },
     });
   }
 };

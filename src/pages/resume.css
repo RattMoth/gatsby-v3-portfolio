@@ -1,0 +1,27 @@
+.react-pdf__Document {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+body {
+  background-color: #38383d;
+  height: 100%;
+}
+
+.react-pdf__Page__svg {
+  border: 1px solid rgb(87, 87, 87);
+}
+
+#info {
+  display: none;
+}
+
+@media all and (orientation: portrait) {
+  #info {
+    display: block;
+    color: green;
+  }
+}
