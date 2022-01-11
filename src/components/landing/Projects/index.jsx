@@ -64,10 +64,18 @@ export const Projects = () => {
     <span>
       Here is a small display of my past projects. While not exhaustive,
       I&apos;ve tried to select projects that highlight the skills listed in{' '}
-      <Link to="/resume" target="_blank" rel="noreferrer">
-        my résumé.{' '}
+      <Link
+        to="/resume"
+        target="_blank"
+        rel="noreferrer"
+        style={{
+          color: theme === 'dark' ? 'white' : '#0056b3',
+          textDecoration: 'underline',
+        }}
+      >
+        my résumé
       </Link>
-      Thanks for taking a look!
+      . Thanks for taking a look!
     </span>
   );
 
