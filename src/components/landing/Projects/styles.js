@@ -29,7 +29,7 @@ export const Grid = styled.div`
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 8fr;
-  gap: 1.2rem 1.2rem;
+  gap: 1.1rem 1.1rem;
 
   @media (max-width: 960px) {
     grid-template-columns: repeat(2, 1fr);
@@ -50,16 +50,6 @@ export const Item = styled.div`
       ? '0 1px 6px 0 rgba(255, 255, 255, 0.29)'
       : '0 1px 6px 0 rgba(0, 0, 0, 0.11)'};
 
-  :hover {
-    -webkit-transform: scale(1.01);
-    -ms-transform: scale(1.01);
-    transform: scale(1.01);
-    transition: transform 0.25s ease-in-out;
-    -webkit-transition: transform 0.25s ease-in-out;
-    -moz-transition: transform 0.25s ease-in-out;
-    -ms-transition: transform 0.25s ease-in-out;
-  }
-
   h4 {
     color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#19323C')};
   }
@@ -79,6 +69,16 @@ export const Item = styled.div`
 export const Content = styled.div`
   padding: 1rem 0;
   min-height: 160px;
+
+  button:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: transform 0.25s ease-in-out;
+    -webkit-transition: transform 0.25s ease-in-out;
+    -moz-transition: transform 0.25s ease-in-out;
+    -ms-transition: transform 0.25s ease-in-out;
+  }
 `;
 
 export const Stats = styled.div`

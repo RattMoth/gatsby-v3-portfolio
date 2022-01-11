@@ -1,10 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 //
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ArrowsFullscreen } from 'react-bootstrap-icons';
-// import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Container, Card, TitleWrap } from '../../common';
 import { ThemeContext } from '../../../providers/ThemeProvider';
 
@@ -57,11 +55,6 @@ export const Projects = () => {
     }
   `);
 
-  useEffect(() => {
-    // Show tooltip on initial load
-    // ReactTooltip.show(cardRef.current);
-  }, []);
-
   const handleModalOpenClick = (targetProject) => {
     setActiveProject(targetProject);
     handleShow();
@@ -77,11 +70,6 @@ export const Projects = () => {
       Thanks for taking a look!
     </span>
   );
-
-  /** TODO:
-   * Add tooltip to card
-   * Set first child to active/hover/whatever until user interaction
-   */
 
   return (
     <Wrapper id="projects">
@@ -102,10 +90,7 @@ export const Projects = () => {
           <Grid>
             {edges.map((project, i) => (
               <Item key={project.node.id} theme={theme}>
-                <Card
-                  theme={theme}
-                  onClick={() => handleModalOpenClick(project.node)}
-                >
+                <Card theme={theme}>
                   <div className="image-container">
                     <GatsbyImage
                       className="gatsby-img"
@@ -120,7 +105,26 @@ export const Projects = () => {
                     />
                   </div>
                   <Content>
-                    <h4>{project.node.frontmatter.name}</h4>
+                    <div className="d-flex">
+                      <h4 style={{ marginTop: '0.5rem' }}>
+                        {project.node.frontmatter.name}
+                      </h4>{' '}
+                      <button
+                        onClick={() => handleModalOpenClick(project.node)}
+                        type="button"
+                        className="btn btn-sm btn-outline-info ml-auto align-self-start"
+                        style={
+                          theme === 'dark'
+                            ? {
+                                color: '#fff',
+                                borderColor: '#fff',
+                              }
+                            : null
+                        }
+                      >
+                        <small>Expand details</small>
+                      </button>
+                    </div>
                     <div>{project.node.frontmatter.shortDescription}</div>
                   </Content>
                   <TitleWrap>
@@ -137,7 +141,6 @@ export const Projects = () => {
                         )
                       )}
                     </Stats>
-                    <ArrowsFullscreen className="fullscreen-icon" />
                   </TitleWrap>
                 </Card>
               </Item>

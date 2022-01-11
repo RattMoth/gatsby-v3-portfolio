@@ -16,6 +16,7 @@ const renderTooltip = (props) => (
 const ToggleTheme = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [themeTooltipWillShow, setThemeTooltipWillShow] = useState(false);
+  const [userToggledTheme, setUserToggledtheme] = useState(false);
 
   const flashTooltip = () => {
     setTimeout(() => {
@@ -25,6 +26,9 @@ const ToggleTheme = () => {
   };
 
   const handleClick = () => {
+    if (!userToggledTheme) {
+      setUserToggledtheme(true);
+    }
     toggleTheme();
   };
 
@@ -32,10 +36,10 @@ const ToggleTheme = () => {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
       .matches;
 
-    if (prefersDarkMode && theme === 'dark') {
+    if (prefersDarkMode && theme === 'dark' && !userToggledTheme) {
       flashTooltip();
     }
-  }, [theme]);
+  }, [theme, userToggledTheme]);
 
   return (
     <Wrapper type="button" onClick={handleClick}>
