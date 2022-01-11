@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpSquareFill } from 'react-bootstrap-icons';
 import { Button } from './Styles';
+import './style.css';
 
 const ScrollButton = () => {
   const [visible, setVisible] = useState(false);
+  const [lastScrollPosition, setLastScrollPosition] = useState(0);
 
   const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300) {
-      setVisible(true);
-    } else if (scrolled <= 300) {
+    const currentScrollPosition = document.documentElement.scrollTop;
+
+    // Hide on upscroll, show on downscroll
+    if (lastScrollPosition > currentScrollPosition) {
       setVisible(false);
     }
+    if (
+      currentScrollPosition > lastScrollPosition &&
+      currentScrollPosition > 300
+    ) {
+      setVisible(true);
+    }
+    setLastScrollPosition(currentScrollPosition);
   };
 
   useEffect(() => {
@@ -29,10 +38,11 @@ const ScrollButton = () => {
   };
 
   return (
-    <Button>
+    <Button type="button">
       <ArrowUpSquareFill
+        id="scroll-button"
         onClick={scrollToTop}
-        style={{ display: visible ? 'inline' : 'none' }}
+        className={visible ? 'visible' : 'hidden'}
       />
     </Button>
   );

@@ -132,8 +132,7 @@ export const Projects = () => {
                             : null
                         }
                       >
-                        {/* <small>Show details</small> */}
-                        Show details
+                        <small>Show details</small>
                       </button>
                     </div>
                     <div>{project.node.frontmatter.shortDescription}</div>

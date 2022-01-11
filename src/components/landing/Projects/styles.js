@@ -70,15 +70,15 @@ export const Content = styled.div`
   padding: 1rem 0;
   min-height: 160px;
 
-  button:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    transition: transform 0.25s ease-in-out;
-    -webkit-transition: transform 0.25s ease-in-out;
-    -moz-transition: transform 0.25s ease-in-out;
-    -ms-transition: transform 0.25s ease-in-out;
-  }
+  // button:hover {
+  //   -webkit-transform: scale(1.1);
+  //   -ms-transform: scale(1.1);
+  //   transform: scale(1.1);
+  //   transition: transform 0.25s ease-in-out;
+  //   -webkit-transition: transform 0.25s ease-in-out;
+  //   -moz-transition: transform 0.25s ease-in-out;
+  //   -ms-transition: transform 0.25s ease-in-out;
+  // }
 `;
 
 export const Stats = styled.div`
