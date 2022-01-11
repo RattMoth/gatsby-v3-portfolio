@@ -114,13 +114,15 @@ export const Projects = () => {
                   </div>
                   <Content>
                     <div className="d-flex">
-                      <h4 style={{ marginTop: '0.5rem' }}>
+                      <h4
+                        style={{ marginTop: '0.5rem', marginRight: '0.5rem' }}
+                      >
                         {project.node.frontmatter.name}
                       </h4>{' '}
                       <button
                         onClick={() => handleModalOpenClick(project.node)}
                         type="button"
-                        className="btn btn-sm btn-outline-info ml-auto align-self-start"
+                        className="btn btn-sm btn-outline-info ml-auto align-self-start text-nowrap"
                         style={
                           theme === 'dark'
                             ? {
@@ -130,7 +132,8 @@ export const Projects = () => {
                             : null
                         }
                       >
-                        <small>Expand details</small>
+                        {/* <small>Show details</small> */}
+                        Show details
                       </button>
                     </div>
                     <div>{project.node.frontmatter.shortDescription}</div>
