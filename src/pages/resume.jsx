@@ -45,7 +45,11 @@ export default function Resume() {
           <Download /> Download a Copy
         </Button>
       </div>
-      <Document externalLinkTarget="_blank" file={resume}>
+      <Document
+        externalLinkTarget="_blank"
+        file={resume}
+        loading={<div style={{ color: 'white' }}>Generating PDF...</div>}
+      >
         <Page
           id="pdfPage"
           scale={scale}
