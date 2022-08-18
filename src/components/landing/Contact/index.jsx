@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import github from '../../../assets/icons/gitHub.png';
+import gitlab from '../../../assets/icons/gitlab.png';
 import fcc from '../../../assets/icons/fcc.jpg';
 import linkedin from '../../../assets/icons/linkedin.png';
 import twitter from '../../../assets/icons/twitter.png';
@@ -30,6 +31,14 @@ export const Contact = () => {
               rel="noreferrer"
             >
               <img src={github} alt="GitHub" />
+            </a>
+
+            <a
+              target="_blank"
+              href="https://gitlab.com/RattMoth"
+              rel="noreferrer"
+            >
+              <img src={gitlab} alt="GitLab" />
             </a>
 
             <a
