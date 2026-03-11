@@ -2,6 +2,6 @@ node_modules/
 *.swp
 .cache/
 public
-package-lock.json
 todo.md
 .env
+

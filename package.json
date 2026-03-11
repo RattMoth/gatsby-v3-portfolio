@@ -46,6 +46,9 @@
     "react-text-loop": "^2.3.0",
     "styled-components": "^5.2.3"
   },
+  "overrides": {
+    "@babel/core": "^7.21.0"
+  },
   "devDependencies": {
     "eslint": "^7.24.0",
     "eslint-config-airbnb": "^18.2.1",
