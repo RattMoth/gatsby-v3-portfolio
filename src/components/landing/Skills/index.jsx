@@ -5,14 +5,24 @@ import { ThemeContext } from '../../../providers/ThemeProvider';
 import { Container, CheckBox, CheckBoxLabel } from '../../common';
 import { Wrapper, SkillsWrapper, Details } from './styles';
 
-const short =
-  "Hey thanks for checking out my site! I'm a self-taught developer with about 1.5 years of professional experience. I specialize in React.js, and I am familiar with Python backends such as Flask and Django. I'm also a Linux hobbyist and have been using Debian-based distros as my main OS for the last 10 years (mainly Ubuntu and Linux Mint, who has time for Arch?). If you want to learn more about me feel free to browse my projects below or reach out using any of my contact links!";
+const short = `Hey, thanks for checking out my site! I’m a frontend / fullstack software engineer who enjoys building reliable, scalable web applications and shipping real products to users.
 
-const long = `Hello! I started my coding journey after graduating college in 2018. Since then I've gained experience through volunteer work, coding meetups, and by working alongside some brilliant people in the L.A. start-up scene. I say I only have 1.5 years of "professional experience" because it's only recently that I've actually started to receive W-2s with the job title of "Developer." Regardless of how my experience is quantified, I believe that I've spent enough time pursuing this career to know that it is something I truly enjoy.
+My work focuses primarily on React and TypeScript, with experience building APIs and services using Python frameworks like Django and FastAPI. I enjoy owning features end-to-end, collaborating closely with product and design, and turning complex workflows into intuitive user experiences.
 
-I've been interested in programming since high school; I saw the original Tron movie and bought a C++ book to find out what computers are actually doing when they run a program. Unsurprisingly, that book was too advanced for High School Matt. After a few months of failed learning I became discouraged, and despite my enthusiasm professional programming seemed out of my reach. I believed that a career in this field was reserved for those who "loved math." So my interest in tech had to manifest itself in different ways, predominantly by tinkering around with Linux and getting a little too into Android phones. I've grown quite a bit since then, and thankfully I've discovered that the only requirement to become a "real programmer" is a desire to learn the concepts. I had to take some time to "learn how to learn" in order to realize that High School Matt was maybe a little too hard on himself.
+Outside of coding I’m a longtime Linux enthusiast (Debian-based distros have been my daily driver for nearly a decade), and I enjoy exploring new tools, tinkering with systems, and occasionally going down deep technical rabbit holes.
 
-If you'd like to get in contact please feel free to use any of the contact links below. I'd be happy to discuss jobs, the web development scene, or just tech in general. I have many interests outside of computers too, I tend to collect hobbies. If you reach out I'm sure we'd have something to talk about.
+Feel free to explore my projects below or reach out through any of the contact links!`;
+
+const long = `
+Hello! I’m a frontend / fullstack software engineer who enjoys building thoughtful, reliable web applications. My work primarily focuses on React and TypeScript on the frontend, with Python-based backends using Django and FastAPI. I’m especially interested in building systems that are both scalable and pleasant to work on — clean architecture, strong testing practices, and developer tooling are things I care a lot about.
+
+My professional experience includes working on production React applications, contributing to features from early design all the way through launch. I enjoy collaborating closely with product and design teams, translating complex workflows into intuitive interfaces, and helping teams move quickly without sacrificing stability.
+
+My interest in programming started back in high school after watching the original Tron movie and becoming curious about what computers are actually doing when they run a program. I even bought a C++ book to try to learn... which, unsurprisingly, was a bit ambitious at the time. While that first attempt didn’t quite work out, the curiosity stuck with me.
+
+Over time that curiosity grew into a deeper interest in technology. I began teaching myself programming while continuing to experiment with Linux systems and development tools. Eventually I decided to pursue software engineering more seriously and enrolled in the Hack Reactor coding bootcamp, where I spent over 1,000 hours building applications and collaborating with other developers. After graduating, I transitioned into professional engineering roles and have been working full-time in the field ever since.
+
+Outside of programming I tend to collect hobbies, explore new technologies, and dive into technical rabbit holes just for the fun of learning something new.
 
 Thanks for reading!
 `;
