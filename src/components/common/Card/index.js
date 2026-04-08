@@ -14,6 +14,7 @@ export const Card = styled.div`
 
   .image-container .gatsby-img {
     display: block;
+    max-height: 30vh;
   }
 
   .fullscreen-icon {

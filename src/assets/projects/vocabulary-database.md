@@ -1,5 +1,5 @@
 ---
-  "sortOrder": 2
+  "sortOrder": 5
   "name": "Vocabulary Database Dashboard"
   "languagesArray": ["React/Typescript", "Django", "SQL" ]
   "shortDescription": "Tool used to manage a database of common ACT and SAT vocabulary words."

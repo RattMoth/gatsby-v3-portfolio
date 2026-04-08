@@ -40,11 +40,7 @@ export const Projects = () => {
               screenshotArray {
                 image {
                   childrenImageSharp {
-                    gatsbyImageData(
-                      placeholder: BLURRED
-                      height: 987
-                      width: 1908
-                    )
+                    gatsbyImageData(placeholder: BLURRED, width: 1908)
                   }
                 }
               }

@@ -22,6 +22,36 @@
   }
 }
 
+.screenshot-scroll-wrapper {
+  position: relative;
+}
+
+.screenshot-scroll {
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.scroll-hint-arrow {
+  width: 28px;
+  height: 28px;
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+  animation: bounce 1.4s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
 #project-description {
   padding-top: 1rem;
 }

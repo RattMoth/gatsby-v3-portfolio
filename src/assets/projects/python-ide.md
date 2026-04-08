@@ -1,5 +1,5 @@
 ---
-  "sortOrder": 1
+  "sortOrder": 2
   "name": "Interactive Python IDE"
   "languagesArray": ["React/Typescript", "Web Sockets", "Brython"]
   "shortDescription": "A real-time IDE used for teaching students basic Python."
